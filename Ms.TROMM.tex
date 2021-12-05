@@ -180,13 +180,13 @@ This is a menu that allows users to check the basic application information. You
 Our main development environment is Windows and MacOS. In the case of Windows, terminals that can be used even in windows such as Powershell were used to create a linux environment, and in the case of MacOS, built-in linux environment and terminals were used. Ms.TROMM in order for consumers to receive recommendations faster and immediately control devices such as stylers and smart mirror. Ms.TROMM was manufactured based on mobile applications. In addition, Ms.TROMM so that more users can use it in various mobile operating systems. The frontend framework of Ms.TROMM selected 'Flutter', a representative cross-platform framework. Currently, Google's Android accounts for the majority of global mobile platforms, and Apple's iPhone accounts for about 15\%, but Apple's iPhone users' consumption patterns and loyalty to electronics are quite different from Android users, and iPad, which accounts for a large portion of the tablet market, so the actual usage rate is very high. In fact, looking at the mobile operating system market share, including the tablet market, it can be seen that the proportion of iOS (including iPadOS) has increased by about 30\%. Therefore, we have adopted Flutter, a mobile/web/desktop cross-platform framework launched by Google based on the Dart Programming language, as a frontend framework, satisfying all of these demands and further considering future desktop applications. In the case of backend server, Python-based Flask, which implements artificial intelligence-based services and has well-established statistical and analysis packages, was adopted. Flask has the advantage of being easy to create API servers and very light. In addition, since Flask has a high degree of freedom, such as being able to change and respond immediately according to the purpose of development when there is not much time left, It was adopted because it was considered the most suitable web framework for Ms.TROMM development.\\ \\ 
 
 \begin{figure}[]
-\centerline{\includegraphics{그림1.png}}
+\centerline{\includegraphics{assets/그림1.png}}
 \caption{Mobile \& Tablet OS Market Share Rate}
 \label{fig}
 \end{figure}
 
 \begin{figure}[]
-\centerline{\includegraphics{그림12png.png}}
+\centerline{\includegraphics{assets/그림12png.png}}
 \caption{TIOBE INDEX}
 \label{fig}
 \end{figure}
@@ -231,7 +231,7 @@ Our main development environment is Windows and MacOS. In the case of Windows, t
 
 
 \begin{figure}[htbp]
-\centerline{\includegraphics{flutter.png}}
+\centerline{\includegraphics{assets/flutter.png}}
 \caption{Cross-platfrom framework 'Flutter'}
 \label{fig}
 \end{figure}
@@ -243,87 +243,87 @@ To implement Ms.TROMM, it was necessary to obtain data from the database or to o
 \subsection{Software in use}
 \begin{enumerate}
     \item LG ThinQ, LG SmartHome Application\\
-    \centerline{\includegraphics[scale=0.30]{thinkq.jpg}}
+    \centerline{\includegraphics[scale=0.30]{assets/thinkq.jpg}}
 
         LG Electronics uses the 'LG ThinQ', an application to control its smart home appliances. In addition, in the case of smart mirror, it can be controlled through the 'LG Smart Home' as a key home appliance for the smart home ecosystem that will be built as soon as possible. Through these two apps, LG Electronics will bridge users and smart devices so that users can monitor and control their homes anytime, anywhere. Our application is also an app to build a better ecosystem between users and smart devices. Our app is a smart assistant-like application that integrates the environment in which users use smart devices, checks minor things in advance that users may miss, and recommends the best way. \\ \\
     \\ 
     \item VSCode(Visual Studio Code) \\ \\
-    \centerline{\includegraphics{vs.png}}
+    \centerline{\includegraphics{assets/vs.png}}
     VSCode is an open source-based text editor published by Microsoft. VSCode is a text editor, not an IDE, but has the advantage of being able to install various expansion packs. In addition, it has its own terminal function. Supporting various languages, The development environment for data and artificial intelligence technologies used by Ms.TROMM is excellent. In addition, VSCode was adopted as a text editor because of its excellent interworking with Git, a version control system.\\ \\ \\ \\ 
     \item GitHub\\\\
-    \includegraphics[scale=0.9]{Gtib.png}
+    \includegraphics[scale=0.9]{assets/Gtib.png}
     \\ \\ GitHub serves as a repository for Git, a distributed version control system. During development, several people go through a collaborative process of adding and deleting various functions, which can lead to confusion in this process without a version control system. Github is a web-based service that allows you to intuitively understand the team members' version control process. In addition, simple processes such as simply uploading and downloading files can be easily controlled using GUI tools such as Github Desktop. \\
     
     \break
     
     \item Android Studio \\ 
-    \centerline{\includegraphics[scale=0.9]{as.png}}
+    \centerline{\includegraphics[scale=0.9]{assets/as.png}}
     In the case of Ms.TROMM, since it is basically a mobile app, an integrated development environment (IDE) for mobile apps was needed, and Android Studio, which team members were relatively familiar with, was adopted as IDE. Both Flutter and Android Studio, which we adopted as the Frontend Framework, are platforms announced by Google, so they are highly interconnected, so there was no big problem in developing them. The advantage of being able to develop while checking the progress of the app through the UI is also the reason for adopting Android Studio. \\\\\\\\\\\\
     
     \item Heroku\\\\
-    \includegraphics{Heroku.png}
+    \includegraphics{assets/Heroku.png}
     \\ \\ Heroku is a service that allows free hosting of websites through git. It is a cloud platform as a service (PaaS) that supports multiple programming languages. In general, when developing or implementing an app, it provides a platform that enables applications to be developed, executed, and managed without the complexity of creating and maintaining related infrastructure. \\
     
     \break
     
     \item Firebase\\\\
-    \includegraphics[scale=0.7]{firebase.png}
+    \includegraphics[scale=0.7]{assets/firebase.png}
     \\ \\ Firebase is a backend as a service (BaaS) that provides the necessary functions for web and mobile development. In other words, it is a service that helps you focus on front-end development without designing or implementing servers separately through back-end development. Features include real-time databases, easy user authentication, cloud storage, hosting, app testing, and profit generation. \\
     
     \item DBdiagram \\ \\
-    \centerline{\includegraphics[scale=0.9]{DB.png}}
+    \centerline{\includegraphics[scale=0.9]{assets/DB.png}}
     \\ It is a free, simple tool to draw ER diagrams by just writing code. So, the user can draw entity-relationship diagrams, painlessly. ERD is a very important development product because it can be used to see the model at a glance when implementing functions. Using this site, ERD can be configured through a code similar to SQL. If related codes such as tables and indexes are inserted without drawing ERD separately, ERD is automatically generated. It is also very useful because it can be modified based on code even when modifying.\\ \\
 
     \item MySQL \\ \\
-    \centerline{\includegraphics[scale=0.1]{MySQL.png}}
+    \centerline{\includegraphics[scale=0.1]{assets/MySQL.png}}
     \\ MySQL is the most widely used open-source database worldwide. It is an open-source relational database management system (RDBMS) that uses the standard database query language SQL (Structured Query Language) and features very fast, flexible, and easy to use. It supports multi-user, multi-threads, and provides an application interface (API) for C, C++, Eiffel, Java, Pearl, PHP, Python scripts, and the like. It can be used in Unix, Linux, and Windows operating systems. The Linux operating system, Apache server program, MySQL, and PHP script language composition are free programs that are developed as open-source despite good interworking, so MySQL was also adopted in the development of Ms. TROMM.\\ \\ 
     
     \item SQLAlchemy \\ \\
-    \centerline{\includegraphics[scale=0.1]{sqlalchemy.jpg}}
+    \centerline{\includegraphics[scale=0.1]{assets/sqlalchemy.jpg}}
     \\ SQLAlchemy is an open-source SQL toolkit and object-relational mapper (ORM) for the Python programming language. The advantage is that it is possible to focus on business logic with object-oriented code. It also increases reuse and maintenance convenience and reduces dependence on DBMS. Because of these advantages, we decided to use SQLAlchemy with Ms. TROMM's recommendation system.\\ \\ \\ \\ 
     
     \item Datagrip \\ \\
-    \centerline{\includegraphics[scale=0.5]{datagrip.png}}
+    \centerline{\includegraphics[scale=0.5]{assets/datagrip.png}}
     \\ A DBA tool which is aimed at developers who work with SQL databases. In other words, it is a GUI development tool that facilitates DB development and management. A lite version of DataGrip is embedded within the Ultimate edition of some of JetBrains' IDEs.\\ \\ \\ \\ 
     
     \break
     
     \item flask\\ \\
-    \centerline{\includegraphics[scale=0.5]{flask.png}}
+    \centerline{\includegraphics[scale=0.5]{assets/flask.png}}
     Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers, form validation, upload handling, various open authentication technologies and several common framework related tools. \\ \\ \\ \\ \\ \\ \\ \\
     
     \item numpy \\ \\
-    \centerline{\includegraphics[scale=0.5]{numpy.png}}
+    \centerline{\includegraphics[scale=0.5]{assets/numpy.png}}
     NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.The ancestor of NumPy, Numeric, was originally created by Jim Hugunin with contributions from several other developers. In 2005, Travis Oliphant created NumPy by incorporating features of the competing Numarray into Numeric, with extensive modifications. NumPy is open-source software and has many contributors. NumPy is a NumFOCUS fiscally sponsored project. \\ \\
     
     \break
     
     \item pandas \\ \\
-    \centerline{\includegraphics[scale=0.2]{pandas.PNG}}
+    \centerline{\includegraphics[scale=0.2]{assets/pandas.PNG}}
     Pandas is a software library for analyzing and manipulating data written in Python language. Pandas provide data for manipulating and operating numerical tables and time-series data, which can be used free of charge under Article 3 BSD license conditions. Pandas is named after the first letter of "PANel DATA," a term used in econometrics. Pandas use a structure called DataFrame modeled after the data. Frame structure used in R, many of the functions used in data. The frame of R can be used without difficulty. Moreover, because Python operates on a language-based basis with good accessibility, it has become an essential library for those who enter Python for data analysis. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
     
     \item Marshmallow \\ \\
-    \centerline{\includegraphics [scale=0.3] {marshmallow.png}}
+    \centerline{\includegraphics [scale=0.3] {assets/marshmallow.png}}
     Marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from native Python datatypes. Marshmallow schemas can be used to validate input data. And it can be used to deserialize input data to app-level objects. Also it can be used to serialize app-level objects to primitive Python types. The serialized objects can then be rendered to standard formats such as JSON for use in an HTTP API \\ \\
     
     \item Swagger \\ 
-    \centerline{\includegraphics{Swagger.png}}
+    \centerline{\includegraphics{assets/Swagger.png}}
     Swagger is a framework for Open API Specification (OAS). Swagger is used together with a set of open-source software tools to design, build, document, and use RESTful web services. Swagger includes automated documentation, code generation (into many programming languages), and test-case generation. Simply put, Swagger is an API Spec document. The method of managing APIs through Excel or guide documents requires periodic updates, so it is not easy to manage and takes a long time. So, we can easily manage and test API documents by automating API Spec documents using Swagger. \\ \\   
 
     \item XCode \\ 
-    \centerline{\includegraphics[scale=0.3]{xcode.png}}
+    \centerline{\includegraphics[scale=0.3]{assets/xcode.png}}
     Xcode consists of a suite of tools that developers use to build apps for Apple platforms. Use Xcode to manage your entire development workflow — from creating your app to testing, optimizing, and submitting it to the App Store.\\ \\ \\ \\
     
     \item Google API \\ 
-    \centerline{\includegraphics[scale=0.3]{googleapi.jpg}}
+    \centerline{\includegraphics[scale=0.3]{assets/googleapi.jpg}}
     API is an application programming interface that allows users to exchange requests and responses from different programs such as clients and servers. API allows products/services to communicate with each other without knowing how to implement them and saves time and money by simplifying the application development process. It is divided into an open API and a private API according to the method and purpose of use. Open APIs can be easily accessed and shared by anyone, and private APIs provide information only to some authorized users. (Google API is an open API.) \\ \\ 
     
     \item Adobe XD \\ \\
-    \includegraphics[scale=0.9]{XD.png}
+    \includegraphics[scale=0.9]{assets/XD.png}
      \\ \\Adobe XD is an application for prototyping PCs, mobile Internet pages, and mobile apps released by Adobe. Since Ms.TROMM is a mobile app-based service, it was necessary to think about how users could feel the best experience when providing the app. Therefore, it is possible to intuitively prototype the operation of an Internet page or app operating in a corresponding environment through Adobe XD. In addition, the app development can be made easier by linking the prototype made in this way with Zeplin.\\ \\ \\ \\
     
     \item Zeplin\\ \\
-    \includegraphics[scale=0.32]{Zp.jpg}
+    \includegraphics[scale=0.32]{assets/Zp.jpg}
     Zeplin is a software that helps designers and developers collaborate, and through Zeplin, you can convert design elements into development information (e.g., font, size, size, etc.). While developing apps through Zeplin, you can solve problems that may not be faithful to functional implementation while calculating design elements too deeply. 
     
 \end{enumerate}{}
@@ -346,7 +346,7 @@ To implement Ms.TROMM, it was necessary to obtain data from the database or to o
 
 \section{SPECIFICATION}
     \begin{figure}[htbp]
-\centerline{\includegraphics[scale=0.2]{Whole application.jpg}}
+\centerline{\includegraphics[scale=0.2]{assets/Whole application.jpg}}
 \label{fig}
 \end{figure}
 This picture shows our whole application. Ms. TROMM's recommendation system provides recommendations to users. At this time, the user's reaction is recorded in the DB, and the recommendation system proceeds with learning based on this reaction. And when the next recommendation situation comes, the recommendation system provides recommendations to users again. \\ \\ \\ \\ 
@@ -354,7 +354,7 @@ This picture shows our whole application. Ms. TROMM's recommendation system prov
 \subsection {Entry} \\
 \begin{enumerate}
     \item Splash screen \\ \\
-     \centerline{\includegraphics[scale=0.32]{스플래쉬 화면.jpg}}
+     \centerline{\includegraphics[scale=0.32]{assets/스플래쉬 화면.jpg}}
     \begin{itemize}
     \item[] This is the start page when you run the app. It is exposed for 1 to 2 seconds not to show an empty page during the app's data loading time.
     \end{itemize}
@@ -362,16 +362,16 @@ This picture shows our whole application. Ms. TROMM's recommendation system prov
     \break
     
     \item Onboarding screen \\ \\
-    \centerline{\includegraphics[scale=0.25]{온보딩.png}}
+    \centerline{\includegraphics[scale=0.25]{assets/온보딩.png}}
     \begin{itemize}
     \item[] It is a page that prevents the deletion of apps by clearly showing users the reason for the existence of apps. It consists of a total of three pages explaining why Ms.TROMM's main functions and functions are useful.\\ \\ \\
     \end{itemize}
     \item Onboarding Button \\ \\
-    {\includegraphics[scale=0.75]{온보딩_다음.jpg}}
+    {\includegraphics[scale=0.75]{assets/온보딩_다음.jpg}}
     \begin{itemize}
     \item[] Put the next button at the bottom of the page so that you can move on to the next page.
     \end{itemize}
-    {\includegraphics[scale=0.75]{온보딩_로그인.jpg}}
+    {\includegraphics[scale=0.75]{assets/온보딩_로그인.jpg}}
     \begin{itemize}
     \item[] And on the third page, it changes to the login button to the next button location as shown in the picture. 
     \\ If you have login data on your phone, do not expose the onboarding page. When the splash screen is terminated, the login page is immediately exposed.
@@ -383,21 +383,21 @@ This picture shows our whole application. Ms. TROMM's recommendation system prov
 Ms.TROMM receives two types of information (email, password) for login.\\
 \begin{enumerate}
     \item Login form screen \\ \\
-    \centerline{\includegraphics[scale=0.32]{로그인1.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/로그인1.jpg}}
     \begin{itemize}
     \item[] A login form screen appears where you can enter your email and password. The login button is exposed at the bottom of the field, and there are buttons below the button to sign up for membership and go to the password change page. \\
     \end{itemize}
     \item Login failed screen \\\\
-    \centerline{\includegraphics[scale=0.32]{로그인2.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/로그인2.jpg}}
     \begin{itemize}
     \item[] If login information that is not in the DB is entered, login failed and a pop-up with 'Please check your email and password again!' comment is displayed at the bottom. When you click the gray area or 'x button' or 'OK button', the pop-up will end and the previous one will be exposed again. \\ \\
     \end{itemize}
     \item Changing the password \\ \\ \\
-    \centerline{\includegraphics[scale=0.32]{비밀번호 변경.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/비밀번호 변경.jpg}}
     \begin{itemize}
     \item[] It is a page that supports password change when a user forgets his or her password. In the case of e-mail input, there is an e-mail confirmation field to verify that it is currently in DB. Hereinafter, there is a field where a new password can be set, and there is a password confirmation field to prevent password errors. \\ \\ 
     \end{itemize}
-    \end{enumerate}{}
+    \end{enumerate}
     
 \subsection{Sign up}
 This is the membership form page. Ms.TROMM receives three types of information (name, e-mail, password) when signing up for membership. We plan to add documents and personal information utilization tabs that say this information is only used within Ms.TROMM. \\ \\ 
@@ -406,7 +406,7 @@ This is the membership form page. Ms.TROMM receives three types of information (
 
 \begin{enumerate} 
     \item Sign up form screen \\ \\ \\
-    \centerline{\includegraphics[scale=0.32]{회원가입1.jpg}} \\
+    \centerline{\includegraphics[scale=0.32]{assets/회원가입1.jpg}} \\
     \item[] It consists of fields that receive the name, email, password, and password check. \\
     \begin{itemize}
     \item[-] The name must be entered in 8 characters or less, and we notify you in advance that the name is a necessary element to be called within the app. \\ \\
@@ -422,7 +422,7 @@ This is the membership form page. Ms.TROMM receives three types of information (
     
           \begin{enumerate} 
           \item Phrases when invalid \\ \\
-            \centerline{\includegraphics[scale=0.28]{회원가입3.jpg}}
+            \centerline{\includegraphics[scale=0.28]{assets/회원가입3.jpg}}
           \begin{enumerate}
           \item The name is not valid. Please input it again.
           \item This is an invalid email format. Please input it again.
@@ -431,7 +431,7 @@ This is the membership form page. Ms.TROMM receives three types of information (
         \end{enumerate}
     \item[-] \\ If an input value that matches the rule is entered, the field is processed in green, and the phrase "valid value" is exposed at the bottom. \\
     \item Phrases when valid \\ \\ \\
-    \centerline{\includegraphics[scale=0.28]{회원가입2.jpg}}
+    \centerline{\includegraphics[scale=0.28]{assets/회원가입2.jpg}}
     \begin{enumerate}
 \item This is a valid name.
 \item This is a valid email format.
@@ -441,12 +441,12 @@ This is the membership form page. Ms.TROMM receives three types of information (
         \end{enumerate}
           \end{itemize}
     \item Pop-up \\\\
-    \centerline{\includegraphics[scale=0.32]{회원가입4.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/회원가입4.jpg}}
     \begin{itemize}
         \item[] \\ \\ If you click the Sign-up button before the form is not completed, a pop-up with ’All values have not been entered. Please complete the input.' comment is displayed at the bottom. When you click the gray area or 'x button' or 'OK button', the pop-up will end and the previous one will be exposed again.\\ 
     \end{itemize}
     \item Completed page \\ \\
-    \centerline{\includegraphics[scale=0.32]{회원가입5.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/회원가입5.jpg}}
         \begin{itemize}
         \item[] This page is exposed when membership is completed. Click the login button to go to the login screen.
     \end{itemize}
@@ -461,52 +461,52 @@ This is the membership form page. Ms.TROMM receives three types of information (
     \item Survey(first time to entry) 
     \begin{enumerate}
     \item Information page \\ \\ \\
-    \centerline{\includegraphics[scale=0.32]{설문지1.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/설문지1.jpg}}
     \begin{itemize}
         \item[] \\ \\ This is a page that guides the survey. The survey progress button is exposed at the bottom. The survey consists of contents that will be conducted because it is helpful for the recommendation. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ 
 
     \end{itemize} 
         \item Survey page \\ \\ \\
-        \leftline{\includegraphics[scale=0.15]{설문지2.jpg}
-                   \includegraphics[scale=0.15]{설문지3.jpg}
-                   \includegraphics[scale=0.15]{설문지4.jpg}
-                    \includegraphics[scale=0.15]{설문지5.jpg}}
+        \leftline{\includegraphics[scale=0.15]{assets/설문지2.jpg}
+                   \includegraphics[scale=0.15]{assets/설문지3.jpg}
+                   \includegraphics[scale=0.15]{assets/설문지4.jpg}
+                    \includegraphics[scale=0.15]{assets/설문지5.jpg}}
     \begin{itemize}
         \item[] \\ \\ This is a survey to increase the recommended accuracy of Ms. TROMM. The survey consists of questions about three elements (a style you usually wear often, a favorite color, and a favorite scent). In the case of frequently worn styles, different questions are provided depending on the gender entered when signing up as a member.\\
         \break
         \end{itemize} 
         \item Pop-up\\ \\
-            \centerline{\includegraphics[scale=0.32]{설문지6.jpg}}
+            \centerline{\includegraphics[scale=0.32]{assets/설문지6.jpg}}
     \begin{itemize}
         \item[]  This is a pop-up that is exposed at the bottom of the questionnaire when you try to leave the page. "You must complete the survey to move!" will be displayed. When you click the gray area, 'x button', or 'OK button', the pop-up will end and the survey page will be exposed again.\\ \\ \\
         \end{itemize} 
 
     \item Completed page \\ \\ \\
-    \centerline{\includegraphics[scale=0.32]{설문지7.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/설문지7.jpg}}
     \begin{itemize}
         \item[] This page appears when you complete the survey. The "Move to Home" button is exposed at the bottom. When clicking the button, go to Home.\\ \\ \\ \\
         \end{itemize} 
 \end{enumerate}
 \item Home(Main page)\\ \\
-\centerline{\includegraphics[scale=0.32]{홈4.jpg}}
+\centerline{\includegraphics[scale=0.32]{assets/홈4.jpg}}
 \begin{itemize}
     \item[] Home shows basic functions in the app at once.\\\\
 \end{itemize}
  \begin{enumerate}
- \centerline{\includegraphics[scale=1]{일반 위젯.jpg}}
+ \centerline{\includegraphics[scale=1]{assets/일반 위젯.jpg}}
  \item[-]Indicate today's date and current weather. \\\\
- \leftline{\includegraphics[scale=1]{오늘의 추천 위젯.jpg}}
+ \leftline{\includegraphics[scale=1]{assets/오늘의 추천 위젯.jpg}}
  \item[-] Today's recommendation item is provided in the form of a preview of the recommendation that the user has set as the default recommendation.\\\\
  \item[-] Styler control items allow you to check the connection and connection status with the Styler/Smart Mirror and support the pause/react button when the Styler is operated. It also displays the remaining time until the styler operation stage and shutdown.\\\\
- \leftline{\includegraphics[scale=0.40]{스타일러 제어 위젯.jpg}}
+ \leftline{\includegraphics[scale=0.40]{assets/스타일러 제어 위젯.jpg}}
  \break
  \item[-] \\ \\ If the styler/smart mirror is not connected, when clicked, it will be changed to a message indicating that the connection is underway and the color will be changed.\\ \\ \\ \\ \\
  \item[-] If the connection to the styler/smart mirror fails, it will be changed to a comment indicating the connection failure and the color will be changed. \\ \\
- \leftline{\includegraphics[scale=0.75]{현재 우리집 위젯.jpg}}
+ \leftline{\includegraphics[scale=0.75]{assets/현재 우리집 위젯.jpg}}
  \item[-] \\ \\ Current status of our home menu displays the temperature and humidity of the house, and buttons are located to turn on indoor dehumidification and automatic drying functions.\\ \\
  \end{enumerate}
  \item Bottom Nav \\ \\ \\ \\
- \centerline{\includegraphics[scale=0.5]{하단 nav.jpg}}
+ \centerline{\includegraphics[scale=0.5]{assets/하단 nav.jpg}}
  \break
  \begin{itemize}
     \item[] This is the bottom nav in the app. It consists of home, recommendation, styler, and whole, and when clicked, the picture is activated and goes to the page.
@@ -522,32 +522,32 @@ This is the membership form page. Ms.TROMM receives three types of information (
 
 \begin{enumerate}
     \item Today's recommendation notification \\
-    \centerline{\includegraphics[scale=0.18]{오늘의 추천 팝업1.jpg}
-    \includegraphics[scale=0.18]{오늘의 추천 팝업2.jpg}
-    \includegraphics[scale=0.18]{오늘의 추천 팝업3.jpg}}
+    \centerline{\includegraphics[scale=0.18]{assets/오늘의 추천 팝업1.jpg}
+    \includegraphics[scale=0.18]{assets/오늘의 추천 팝업2.jpg}
+    \includegraphics[scale=0.18]{assets/오늘의 추천 팝업3.jpg}}
     \begin{itemize}
     \item[] Today's recommendation is caused by a pop-up notification. After checking the notification, a notification occurs to select whether the recommendation was helpful, and the recommendation termination popup is exposed when responding. Data from the notification asking for recommendation help is recorded on the server, and more personalized recommendations are made using it.\\ 
 \end{itemize}
 \item Control recommendation notification \\
-\centerline{\includegraphics[scale=0.18]{제어추천 팝업1.jpg}
-            \includegraphics[scale=0.18]{제어추천 팝업2.jpg}}
+\centerline{\includegraphics[scale=0.18]{assets/제어추천 팝업1.jpg}
+            \includegraphics[scale=0.18]{assets/제어추천 팝업2.jpg}}
 \break
     \begin{itemize}
     \item[] This is a notification that occurs when there is a lack of water in the styler or when water needs to be discarded. \\
 \end{itemize}
-\centerline{\includegraphics[scale=0.18]{제어추천 팝업3.jpg}
-            \includegraphics[scale=0.18]{제어추천 팝업4.jpg}}
+\centerline{\includegraphics[scale=0.18]{assets/제어추천 팝업3.jpg}
+            \includegraphics[scale=0.18]{assets/제어추천 팝업4.jpg}}
 \break
     \begin{itemize}
     \item[] This is a notification of indoor dehumidification and automatic drying control that occur when indoor humidity exceeds 40. \\ \\
 \end{itemize}
      \item Weather notification\\ \\
-     \centerline{\includegraphics[scale=0.30]{날씨 추천 팝업.jpg}}
+     \centerline{\includegraphics[scale=0.30]{assets/날씨 추천 팝업.jpg}}
     \begin{itemize}
     \item[] \\ \\ \\ \\A pop-up notification occurs based on the weather. For example, if there's a rain forecast, you'll be notified to bring an umbrella..\\
 \end{itemize}
      \item Schedule notification \\ \\
-     \centerline{\includegraphics[scale=0.30]{일정 추천 팝업.jpg}}
+     \centerline{\includegraphics[scale=0.30]{assets/일정 추천 팝업.jpg}}
     \begin{itemize}
     \item[] \\ \\ \\ \\ A pop-up notification occurs based on the schedule. For example, if you have an interview, you will be notified of the interview cheering comment\\
 \end{itemize}
@@ -558,14 +558,14 @@ This is the membership form page. Ms.TROMM receives three types of information (
     \item[] This is a menu in which the pop-up notification list that has occurred is recorded.\\ \\ \\
 \end{itemize}
 \begin{enumerate}
- \centerline{\includegraphics[scale=0.32]{알림1.jpg}}
+ \centerline{\includegraphics[scale=0.32]{assets/알림1.jpg}}
  \item[-]\\This is the initial notification screen. Comments related to push alarm setting appear. \\\\\\\\
- \centerline{\includegraphics[scale=0.32]{알림2.jpg}}
+ \centerline{\includegraphics[scale=0.32]{assets/알림2.jpg}}
  \item[-] This is a screen that is exposed when there is no notification history after replacing the push alarm setting to ON.\\\\\\\\
- \centerline{\includegraphics[scale=0.32]{알림3.jpg}}
+ \centerline{\includegraphics[scale=0.32]{assets/알림3.jpg}}
  \item[-] \\\\ This is a screen that is exposed when there is a notification list.\\\\\\\\\\\\
-\centerline{\includegraphics[scale=0.25]{알림4.jpg}
-            \includegraphics[scale=0.25]{알림5.jpg}}
+\centerline{\includegraphics[scale=0.25]{assets/알림4.jpg}
+            \includegraphics[scale=0.25]{assets/알림5.jpg}}
  \item[-] \\When you click on the notification list, the body containing the notification is exposed.\\\\\\\\\\\
  \end{enumerate}
 
@@ -575,47 +575,47 @@ This is the membership form page. Ms.TROMM receives three types of information (
 \end{itemize}
     \begin{enumerate}
     \item Button description(first time to entry) \\ \\
-    \centerline{\includegraphics[scale=0.32]{추천1.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/추천1.jpg}}
         \begin{itemize}
     \item[] When entering the recommendation menu for the first time, a page informing you of the basic functions of the buttons in the recommendation menu is exposed. It ends when you click on the gray area. \\
 \end{itemize}
      \item Today's Recommendation \\ \\
-     \centerline{\includegraphics[scale=0.32]{추천2.jpg}}
+     \centerline{\includegraphics[scale=0.32]{assets/추천2.jpg}}
     \begin{itemize}
     \item[] \\ \\ \\ \\ This menu exposes today's recommendations using calendars and weather APIs. Comments and recommendations suitable for the date will be exposed.\\
 \end{itemize}
        \item Control Recommendation \\ \\ \\
-       \centerline{\includegraphics[scale=0.32]{추천3.jpg}}
+       \centerline{\includegraphics[scale=0.32]{assets/추천3.jpg}}
        \break
            \begin{itemize}
     \item[] It is a menu that provides recommendations related to the clothing and home environment in the styler.\\\\\\
 \end{itemize}
      \item Pop-up related to fragrance use \\ \\
-     \centerline{\includegraphics[scale=0.25]{추천4.jpg}
-                \includegraphics[scale=0.25]{추천5.jpg}}
+     \centerline{\includegraphics[scale=0.25]{assets/추천4.jpg}
+                \includegraphics[scale=0.25]{assets/추천5.jpg}}
     \begin{itemize}
     \item[] \\ \\ \\ \\ This is a pop-up that is exposed when you click the fragrance recommendation part. Ask questions about applying the Styler Introductory Application, and forward the sheet activation command to the Styler when the user wants to apply the fragrance.\\
 \end{itemize}
 \end{enumerate}
 
 \subsection{Styler}  \\ 
-\centerline{\includegraphics[scale=0.32]{스타일러4.jpg}}
+\centerline{\includegraphics[scale=0.32]{assets/스타일러4.jpg}}
 This is a menu where you can control the styler. Control buttons on the styler are exposed.
  \begin{enumerate}
-\centerline{\includegraphics[scale=0.32]{스타일러1.jpg}}
+\centerline{\includegraphics[scale=0.32]{assets/스타일러1.jpg}}
  \item[-]This is a page that appears when not connected to the styler. \\\\
-\centerline{\includegraphics[scale=0.5]{제어 버튼1.jpg}} \\ \\
-\centerline{\includegraphics[scale=0.5]{제어 버튼2.jpg}} \\ \\
-\centerline{\includegraphics[scale=0.5]{제어 버튼3.jpg}} \\ \\
+\centerline{\includegraphics[scale=0.5]{assets/제어 버튼1.jpg}} \\ \\
+\centerline{\includegraphics[scale=0.5]{assets/제어 버튼2.jpg}} \\ \\
+\centerline{\includegraphics[scale=0.5]{assets/제어 버튼3.jpg}} \\ \\
  \item[-]It's related to the operation of the styler. There are Styler power-on, power-off, start operation, stop operation buttons, and reservation buttons. If the styler is running, it displays which function is running. \\\\
-  \centerline{\includegraphics[scale=0.5]{스타일러 버튼.jpg}}
+  \centerline{\includegraphics[scale=0.5]{assets/스타일러 버튼.jpg}}
  \item[-]It's a menu that can be operated by the styler. It supports a total of six functional operations \\\\
-\centerline{\includegraphics[scale=0.3]{스타일링 선택.jpg}
-            \includegraphics[scale=0.3]{섬세건조 선택.jpg}} \\ \\
-\centerline{\includegraphics[scale=0.3]{고급의류 선택.jpg}
-            \includegraphics[scale=0.3]{스팀살균 선택.jpg}} \\ \\
+\centerline{\includegraphics[scale=0.3]{assets/스타일링 선택.jpg}
+            \includegraphics[scale=0.3]{assets/섬세건조 선택.jpg}} \\ \\
+\centerline{\includegraphics[scale=0.3]{assets/고급의류 선택.jpg}
+            \includegraphics[scale=0.3]{assets/스팀살균 선택.jpg}} \\ \\
  \item[-]Details of the course will be exposed when each button is clicked. \\\\
-   \centerline{\includegraphics[scale=0.32]{스타일러7.jpg}}
+   \centerline{\includegraphics[scale=0.32]{assets/스타일러7.jpg}}
  \item[-]This is a pop-up that is exposed when another styler menu is pressed while the styler is running. \\\\
  \end{enumerate}
  
@@ -624,23 +624,23 @@ The button to enter my closet menu continues to be exposed to a floating action 
 \begin{enumerate}
 \item My Closet\\ \\
  \begin{enumerate}
- \centerline{\includegraphics[scale=0.32]{내 옷장1.jpg}}
+ \centerline{\includegraphics[scale=0.32]{assets/내 옷장1.jpg}}
  \item[-]The registration date of the clothes and the date you put them in the styler most recently are displayed. The clothes bookmarked at the top are currently in the styler. \\\\
  \item[-]Clothes that need to be turned around in the styler will be guided above. We need a styler in order of importance. - How about a styler?This outfit is okay. \\\\
- \centerline{\includegraphics[scale=0.32]{내 옷장2.jpg}}
+ \centerline{\includegraphics[scale=0.32]{assets/내 옷장2.jpg}}
  \item[-] When you click on the bottom of the list, detailed information about the clothes appears. The information that appears is the registration date, the last styler working day, and the contents that were registered when registering clothes.\\\\
  \end{enumerate}
  
  \item Register New clothes\\ \\
  \begin{enumerate}
-    \centerline{\includegraphics[scale=0.24]{새 옷 등록하기1.jpg}
-    \includegraphics[scale=0.24]{새 옷 등록하기2.jpg}}
+    \centerline{\includegraphics[scale=0.24]{assets/새 옷 등록하기1.jpg}
+    \includegraphics[scale=0.24]{assets/새 옷 등록하기2.jpg}}
  \item[-]It's a menu to register new clothes. At first, the part where you put the picture of the clothes and the name input field are exposed. \\\\
- \centerline{\includegraphics[scale=0.32]{새 옷 등록하기3.jpg}}
+ \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기3.png}}
  \item[-]Next, fields where you can enter colors, styling courses, high-end drying courses, and sterilization are exposed. \\\\
-  \centerline{\includegraphics[scale=0.32]{새 옷 등록하기4.jpg}}
+  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기4.jpg}}
  \item[-]This is a screen where a guide phrase for designating no category is exposed as a pop-up. \\\\
-  \centerline{\includegraphics[scale=0.32]{새 옷 등록하기5.jpg}}
+  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기5.jpg}}
  \item[-]This is a pop-up announcing the completion of the procedure for registering new clothes. \\\\
  \end{enumerate}
  \end{enumerate}
@@ -649,16 +649,16 @@ The button to enter my closet menu continues to be exposed to a floating action 
 This is a menu where you can check the general information of the app. You can check the subscription information and version information terms and conditions, and there is a menu that allows you to change the default settings in the app.
 \begin{enumerate}
     \item Login form screen \\ \\
-    \centerline{\includegraphics[scale=0.32]{전체.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/전체.jpg}}
     \begin{itemize}
     \item[] Version information is displayed in this menu page. \\
     \end{itemize}
     \item My information \\\\
-    \centerline{\includegraphics[scale=0.32]{내 정보1.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/내 정보1.jpg}}
     \begin{itemize}
     \item[] This is a menu where you can check the information you entered when signing up. If you want to change the information, click the Change button at the bottom to see the Change screen. \\ \\
     \end{itemize}
-    \centerline{\includegraphics[scale=0.32]{내 정보2.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/내 정보2.jpg}}
     \begin{itemize}
     \item[] After pressing Change, the screen is displayed. You can modify the information you entered when signing up. \\ \\
     \end{itemize}
@@ -666,7 +666,7 @@ This is a menu where you can check the general information of the app. You can c
     \break
     
     \item Terms and Conditions \\ \\ \\
-    \centerline{\includegraphics[scale=0.32]{개인정보약관.jpg}}
+    \centerline{\includegraphics[scale=0.32]{assets/개인정보약관.jpg}}
     \begin{itemize}
     \item[]You can check the terms and conditions of using personal information. \\ \\ 
     \end{itemize}
@@ -675,7 +675,7 @@ This is a menu where you can check the general information of the app. You can c
 \section{ARCHITECTURE DESIGN AND IMPLEMENTATION}
 
 \subsection{Overall Architecture}
-\centerline{\includegraphics[scale=0.15]{Overall architecture.jpg}}
+\centerline{\includegraphics[scale=0.15]{assets/Overall architecture.jpg}}
 \\ \\ \\ We have three parts consisting of our application ‘Ms. TROMM’. First part is ‘Flutter’ which is for our frontend. It mainly reacts with the client(user) part. This will help us our overall application containing several functions and designs. For our backend which mainly reacts with the server, we use Flask and SQL Alchemy. Flask adopted it because it can build and develop back-and-server light and fast. In addition, through SQL Alchemy, the database can be object-oriented and SQL can be handled with Python. Last part is MySQL and Heroku which is for server. MySQL is used to remotely manage databases, and MySQL is connected to Heroku Service Part, a server that provides free hosting up to certain traffic.\\ \\
 
 \subsection{Directory organization}
@@ -749,7 +749,7 @@ When the user goes to ‘App Store' or ‘Google Play Store' and searches the wo
 \break
 
 \subsection{Turn on the application}
-\centerline{\includegraphics[scale=0.5]{flow_1.png}}
+\centerline{\includegraphics[scale=0.5]{assets/flow_1.png}}
 When the user clicks the ‘Ms. TROMM’ application icon, the splash page of our application will be shown. If there is no history of logging in to our application on the user's mobile phone, the onboarding page will be displayed. The user can read the description of why the main functions on the onboarding screen. At the end of the onboarding screen, the user can go to the login or membership screen. If the user has a history of logging in to our application from the user's mobile phone, the login screen appears immediately instead of the onboarding screen.\\ \\
 
 \subsection{Login}
@@ -757,7 +757,7 @@ When the user clicks the ‘Ms. TROMM’ application icon, the splash page of ou
     \item Enter ID(e-mail) and password\\
         The user must enter their ID(e-mail) and password in the ID and password fields for Login, respectively. \\ \\ \\ \\
 \end{enumerate}
-\centerline{\includegraphics[scale=0.5]{flow_2.png}}
+\centerline{\includegraphics[scale=0.5]{assets/flow_2.png}}
 \begin{enumerate}
     \item Login Button\\
         \item[-] If the user’s ID and password are established: Approved\\
@@ -802,7 +802,7 @@ Users who are new to log-in will go to the survey page. The first page of the su
 
 \subsection{Main Page}
 This is the main page of Ms. TROMM. Here, the user can check and manipulate approximate information on the application. \\ \\
-\centerline{\includegraphics[scale=0.5]{flow_3.png}}
+\centerline{\includegraphics[scale=0.5]{assets/flow_3.png}}
 \begin{enumerate}
     \item Basic item\\
         This is a widget that allows users to check today's date and today's temperature. It's a widget that can't be clicked.  \\ \\
