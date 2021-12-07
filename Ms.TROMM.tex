@@ -5,6 +5,7 @@
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
+\usepackage{color}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -638,12 +639,25 @@ The button to enter my closet menu continues to be exposed to a floating action 
  \item[-]It's a menu to register new clothes. At first, the part where you put the picture of the clothes and the name input field are exposed. \\\\
  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기3.png}}
  \item[-]Next, fields where you can enter colors, styling courses, high-end drying courses, and sterilization are exposed. \\\\
-  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기4.jpg}}
+  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기4.png}}
  \item[-]This is a screen where a guide phrase for designating no category is exposed as a pop-up. \\\\
-  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기5.jpg}}
+  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기5.png}}
  \item[-]This is a pop-up announcing the completion of the procedure for registering new clothes. \\\\
  \end{enumerate}
- \end{enumerate}
+ 
+ \item Register New clothes\\ \\
+ \begin{enumerate}
+    \centerline{\includegraphics[scale=0.24]{assets/새 옷 등록하기1.jpg}
+    \includegraphics[scale=0.24]{assets/새 옷 등록하기2.jpg}}
+    \item[-]It's a menu to register new clothes. At first, the part where you put the picture of the clothes and the name input field are exposed. \\\\
+    \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기3.png}}
+    \item[-]Next, fields where you can enter colors, styling courses, high-end drying courses, and sterilization are exposed. \\\\
+    \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기4.png}}
+    \item[-]This is a screen where a guide phrase for designating no category is exposed as a pop-up. \\\\
+    \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기5.png}}
+    \item[-]This is a pop-up announcing the completion of the procedure for registering new clothes. \\\\
+    \end{enumerate}
+\end{enumerate}
 
 \subsection {All} \\
 This is a menu where you can check the general information of the app. You can check the subscription information and version information terms and conditions, and there is a menu that allows you to change the default settings in the app.
@@ -679,23 +693,83 @@ This is a menu where you can check the general information of the app. You can c
 \\ \\ \\ We have three parts consisting of our application ‘Ms. TROMM’. First part is ‘Flutter’ which is for our frontend. It mainly reacts with the client(user) part. This will help us our overall application containing several functions and designs. For our backend which mainly reacts with the server, we use Flask and SQL Alchemy. Flask adopted it because it can build and develop back-and-server light and fast. In addition, through SQL Alchemy, the database can be object-oriented and SQL can be handled with Python. Last part is MySQL and Heroku which is for server. MySQL is used to remotely manage databases, and MySQL is connected to Heroku Service Part, a server that provides free hosting up to certain traffic.\\ \\
 
 \subsection{Directory organization}
-(We will add the picture of out UML) \\ \\
-This is the table which shows directory, file name and part name.\\ \\
-(We will add the directory of last part) \\ \\
+This is the table which shows directory, file name and module name.\\
 
 \begin{table} [h]
     \centering
     \begin{tabular}{l|l|l}
     \hline
-    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Part Name}}
+    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Module}}
      & & & \\ \hline
-    \textit{\begin{tabular}[c]{@{}l@{}}document/\\Ms.TROMM\\-Project\\-document\\\\\\\\\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Ms.TROMM-document.pdf\\Ms.TROMM-document.tex\\\\\\\\\\\end{tabular}} 
-    & \textit{\begin{tabular}[c]{@{}l@{}}documentation\\\\\\\\\\\\\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\.firebaserc\\\\.gitignore\\\\.metadata\\\\README.md\\\\analysis_options.yaml\\\\.firebase.json\\\\pubspec.lock\\\\pubspec.yaml\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter) \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\.firebase/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\hosting.YnVpbGRcd2Vi\\.cache\\\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\android/app/src/\\main/res/drawable\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\background.png\\\\launch_background.xml\\\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\android/app/src/\\main/res/values\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\styles.xml\\\\\\\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\db/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\schema.sql\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\android/app/src/\\main/res/values\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\styles.xml\\\\\\\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\AppDelegate.swift\\\\info.plist\\\\Runner-Bridging-Header.h\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\end{tabular} \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table} [p]
+    \centering
+    \begin{tabular}{l|l|l}
+    \hline 
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner\\Assets.xcassets/\\LaunchBackground\\.imageset/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Contents.json\\\\background.png\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner\\Assets.xcassets/\\LaunchImage\\.imageset/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Contents.json\\\\LaunchImage.png\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner\\Base.lproj/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\LaunchScreen.storyboard\\\\Main.storyboard\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\main.dart\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/local\_db/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\database\_example.dart\\\\shared\_pref.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/models/\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\album.dart\\\\connectable.dart\\\\smart\_mirror.dart\\\\styler.dart\\\\user.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/authentication/\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\change\_password.dart\\\\login.dart\\\\signup.dart\\\\signup\_done.dart\\\\tutorial.dart\\\\utils.dart\\\\validators.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/home/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\alert\_page.dart\\\\home.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table} [t]
+    \centering
+    \begin{tabular}{l|l|l} \hline
+    \begin{tabular}[c]{@{}l@{}}\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\moisture\_box.dart\\\\recommendation\_box\\.dart\\\\styler\_control\_box\\.dart\\\\weather_box.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/settings/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\settings.dart\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/styler/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\styler.dart\\\\styler2.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/survey/\\\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\survey\_done.dart\\\\survey\_main.dart\\\\survey\_step\_1.dart\\\\survey\_step\_2.dart\\\\survey\_step\_3.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/widgets/\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\alert\_dialog.dart\\\\logo.dart\\\\spacer.dart\\\\tromm\_button.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\web/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\index.html\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\web/splash\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\style.css\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\.gitignore\\\\requirements.txt\\\\README.md\\\\wsgi.py\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy)\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table} [t]
+    \centering
+    \begin{tabular}{l|l|l}
+    \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr/\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Swg.py\\\\clothe.csv\\\\dataset.csv\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy)\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr/\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Swg.py\\\\clothe.csv\\\\dataset.csv\\\\main.py\\\\swagger.yml\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy)\\\\\\\end{tabular} \\ \hline 
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr/models/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\\_init\_.py\\\\clothes.py\\\\clothes\_combination.py\\\\control.py\\\\mirror.py\\\\recommendation.py\\\\scent.py\\\\schedule.py\\\\styler.py\\\\styler\_alert.py\\\\user.py\\\\user\_preference.py\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy) \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Procfile\\\\install.md\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\DB\\(MySQL+Heroku)\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\settings.py\\\\\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\DB\\(MySQL+Heroku)\\\\\\\end{tabular} \\ \hline
+    
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_document/\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Ms.TROMM.pdf\\\\Ms.TROMM.tex\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Documentation\\\\\\\\\end{tabular} \\ \hline
     \end{tabular}
     \renewcommand{\thetable}{\arabic{table}}
     \caption{Directory of Ms. TROMM}
     \label{table}
 \end{table}
+
+\textcolor[rgb]{1,1,1}{(This is blank)}\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \subsection{Part 1: Flutter (Frontend)}
 \begin{enumerate}
@@ -703,7 +777,7 @@ This is the table which shows directory, file name and part name.\\ \\
     To develop Ms.TROMM, a cross-platform that can be developed in both Android and iOS environments, we used Flutter, a web/app cross-platform framework developed by Google based on the Dart language. In the case of Ms.TROMM developed with Flutter, it can be used in both web and app environments. The advantage of developing Ms.TROMM is that it can be developed in a familiar environment among the existing iOS or Android development environments, such as Android Studio or Xcode. In the case of Ms.TROMM, it is an artificial intelligence software that provides better recommendations while accumulating data through learning, so it is important to provide an environment that can be used by more users. Therefore, Flutter was adopted as a front-end development environment to provide a better experience for both developers and users. \\ \\
     \item Functionality\\
     Ms.TROMM's front-end made with Flutter requests JSON-type data processed by the back-end itself (or processed from the database) from the back-end and serves to show Ms.TROMM users to use it easily. In addition, the information received from the user is delivered to the back-end server and stored (updated) in the database, or data is provided for the back-end server to process. In other words, users can communicate with the backend server of Ms.TROMM through the frontend of Ms.TROMM as well as with the systems of LG Styler and LG Smart Mirror. Users can get a better experience for Ms.TROMM and LG Electronics from the user-friendly front-end of Ms.TROMM. \\ \\
-    \item Location of source code: - \\
+    \item Location of source code: \\: Ms-TROMM/MsTROMM\_Frontend/ \\ \\
     \item Class component: - \\
     \item Where it is taken from\\
     Install the Flutter SDK first. Environmental variables must be set to use the plotter command. If you type environmental variables in the window search box, you will see "Edit System Environment Pile" and click it. Find and correct the variable 'PATH' in the user variable and put the Flutter SDK in the BIN path. Run the flutter console and enter the flutter doctor command to verify that the conditions for executing the flutter are satisfied. After installing Android Studio, install the Flutter plug-in to complete it.\\ \\
@@ -717,8 +791,11 @@ This is the table which shows directory, file name and part name.\\ \\
     It was decided to use Python-based Flask to build Ms.TROMM's backend server. In the case of Flask, since it is possible to build and develop backend servers light and fast, it was judged to be the most suitable framework due to the nature of the development that requires delivering Restful API to the frontend. Due to the nature of the agile development environment, choosing a secure framework certified by many developers was an important issue for us, and when blocked by various errors and bugs, it had to be easy to find a way to solve it. Therefore, flask served our purpose as a stable framework loved by many developers as a web framework. In addition, through SqlAlchemy (ORM), the database can be object-oriented and SQL can be handled with Python.\\ \\
     \item Functionality\\
     As a result of weaving the ERD model at the design stage, the ERD model was not simple. Therefore, it was determined that it was better to deal with the database through ORM. As a utility to utilize ORM, Python-based SqlAlchemy was used. Through this, database control, management, maintenance, and maintenance were easily established. In addition, Marshall, a great module from Python that processes data in the database into restful API (JSON), was used to selectively respond to the desired data.\\ \\
-    \item Location of source code:  - \\ \\
-    \item Class component: - \\ \\
+    \item Location of source code\\: Ms-TROMM/MsTROMM\_Backend/ \\ \\
+    \item Class component \\
+        \item[-] Ms-TROMM/MsTROMM\_Backend/wsgi.py: Execution file of flask \\
+        \item[-] Ms-TROMM/MsTROMM\_Backend/requirements.txt: Files related to virtual environment setting \\
+        \item[-] Ms-TROMM/MsTROMM\_Backend/flaskr/models/: Files in this folder are for SQL Alchemy ORM \\ \\
     \item Where it is taken from\\
     Python is released free of charge, so anyone can easily download it, and it is being updated continuously. In addition, modules developed with Python are continuously being updated and can be easily installed through anaconda, a virtual environment, or pip, an installation module. Various integrated development environments (IDE) and text editors are also supporting python. Ms. flask, SQL Alchemy, etc. Several modules used in Ms. TROMM can also be easily used by installing and importing them through pip or the like in a python environment. (https://www.python.org/downloads/) \\ \\
     \item How and why we use it\\
@@ -731,8 +808,11 @@ This is the table which shows directory, file name and part name.\\ \\
     In the case of Ms.TROMM, it was difficult to utilize a database or server on a local basis because it had to receive information in real-time, update, and learn. Therefore, MySQL, which can remotely manage the database, is used, and MySQL is connected to the Heroku service part, a server that provides free hosting up to certain traffic so that data in the database can be read and updated in real-time. \\ \\
     \item Functionality \\
     MySQL is an application that helps create and manage tables that can manage databases. To deal with MySQL (SQL), we need to be familiar with SQL language, but we were able to deal with SQL through Python code through SQL Alchemy's ORM. By connecting MySQL to the clearDB of the Heroku server, I was able to check in real-time whether the data was properly updated through JetBrain's Datagrip. In addition, through Heroku, real-time communication between the front and back end (database) was possible. Heroku, a free hosting server, allows users to receive Restful APIs from back-and-server or use Ms.TROMM services even in remote environments, not local to certain traffic.\\ \\
-    \item Location of source code:  - \\ \\
-    \item Class component: - \\ \\
+    \item Location of source code\\: Ms-TROMM/MsTROMM\_Backend/ \\ \\
+    \item Class component \\
+        \item[-] Ms-TROMM/MsTROMM\_Backend/procfile: Upload Github content to Heroku \\
+        \item[-] Ms-TROMM/MsTROMM\_Backend/install.md: Connect MySQL and SQL Alchemy. File with MySQL DB URL. \\
+        \item[-] Ms-TROMM/MsTROMM\_Backend/flaskr/settings.py: File with important DB URLs, API key values, and calendar access IDs \\ \\
     \item Where it is taken from \\
     MySQL is an open-source DBMS announced in 1995. Many of the world's largest and fastest-growing organizations, including various SNS such as Facebook and Twitter, rely on MySQL. This is to save the operating time and cost of large websites and package software. To implement an efficient database solution, we use MySQL. MySQL can be installed simply on Windows 10 and you can easily download it by entering the website link.\\
     Heroku is a cloud computing platform that supports multiple programming languages. The origin of the name comes from Hero and Haiku. It supports a variety of things, including Git and GitHub, and many services are supported by add-on and API. Heroku's most representative advantage is that it has very good elasticity. To use Heroku, you need to install the CLI, and if you proceed with the tutorial, you can install Heroku's program.\\
