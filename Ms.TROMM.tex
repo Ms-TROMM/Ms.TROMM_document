@@ -896,8 +896,18 @@ This is the table which shows directory, file name and module name.\\
     To develop Ms.TROMM, a cross-platform that can be developed in both Android and iOS environments, we used Flutter, a web/app cross-platform framework developed by Google based on the Dart language. In the case of Ms.TROMM developed with Flutter, it can be used in both web and app environments. The advantage of developing Ms.TROMM is that it can be developed in a familiar environment among the existing iOS or Android development environments, such as Android Studio or Xcode. In the case of Ms.TROMM, it is an artificial intelligence software that provides better recommendations while accumulating data through learning, so it is important to provide an environment that can be used by more users. Therefore, Flutter was adopted as a front-end development environment to provide a better experience for both developers and users. \\ \\
     \item Functionality\\
     Ms.TROMM's front-end made with Flutter requests JSON-type data processed by the back-end itself (or processed from the database) from the back-end and serves to show Ms.TROMM users to use it easily. In addition, the information received from the user is delivered to the back-end server and stored (updated) in the database, or data is provided for the back-end server to process. In other words, users can communicate with the backend server of Ms.TROMM through the frontend of Ms.TROMM as well as with the systems of LG Styler and LG Smart Mirror. Users can get a better experience for Ms.TROMM and LG Electronics from the user-friendly front-end of Ms.TROMM. \\ \\
-    \item Location of source code: \\: Ms-TROMM/MsTROMM\_Frontend/ \\ \\
-    \item Class component: - \\
+    \item Location of source code\\: Ms-TROMM/MsTROMM\_Frontend/ \\ \\
+    \item Class component
+        \item[-] lib/models/* : Model classes for displaying necessary data. Also used for (de)serializing data into JSON format. \\
+        \item[-] lib/ui/authentication/* : Authentication screen related classes. Validation of inputs during authentication process is done via  `validators.dart` class. \\
+        \item[-] lib/ui/home/* : The main page for logged in user is `home.dart`. This screen holds a botton navigation tab, each of them being main page, recommendation page, styler page, settings page. \\
+        \item[-] lib/ui/recommendation/* : Recommendations based on user’s schedule information and styler control settings are displayed in recommendation tab. This tab also has a “Add my clothes” function, which allows the user to add him/her clothes. \\
+        \item[-] lib/ui/settings/* : Settings include user’s alert preference, version information, logging out functionality, and etc. \\
+        \item[-] lib/ui/styler/* : Styler screen is a mock interface for controlling styler via mobile app. User’s setting is delivered to our server everytime it changes. Based on this information server offers recommendations on styler settings. \\
+        \item[-] lib/ui/survey/* : Survey screen is composed of three steps. Each step will ask for user’s taste of scent, clothes, and color. \\
+        \item[-] lib/ui/theme : Theme is a utility class that holds instances of theme widget which is used overall inside the app. \\
+        \item[-] lib/ui/widgets : This is also a utility class that holds instances of commonly used widgets, such as the blue button, or an alert dialog. \\
+        \item[-] lib/main.dart : This file is an entry point of our app. Inside main function, we initialize the firebase sdk, and define named routes of each page.  \\ \\
     \item Where it is taken from\\
     Install the Flutter SDK first. Environmental variables must be set to use the plotter command. If you type environmental variables in the window search box, you will see "Edit System Environment Pile" and click it. Find and correct the variable 'PATH' in the user variable and put the Flutter SDK in the BIN path. Run the flutter console and enter the flutter doctor command to verify that the conditions for executing the flutter are satisfied. After installing Android Studio, install the Flutter plug-in to complete it.\\ \\
     \item How and why we use it \\
@@ -911,10 +921,10 @@ This is the table which shows directory, file name and module name.\\
     \item Functionality\\
     As a result of weaving the ERD model at the design stage, the ERD model was not simple. Therefore, it was determined that it was better to deal with the database through ORM. As a utility to utilize ORM, Python-based SqlAlchemy was used. Through this, database control, management, maintenance, and maintenance were easily established. In addition, Marshall, a great module from Python that processes data in the database into restful API (JSON), was used to selectively respond to the desired data.\\ \\
     \item Location of source code\\: Ms-TROMM/MsTROMM\_Backend/ \\ \\
-    \item Class component \\
+    \item Class component 
         \item[-] Ms-TROMM/MsTROMM\_Backend/wsgi.py: Execution file of flask \\
         \item[-] Ms-TROMM/MsTROMM\_Backend/requirements.txt: Files related to virtual environment setting \\
-        \item[-] Ms-TROMM/MsTROMM\_Backend/flaskr/models/: Files in this folder are for SQL Alchemy ORM \\ \\
+        \item[-] Ms-TROMM/MsTROMM\_Backend/flaskr/models/*: Files in this folder are for SQL Alchemy ORM \\ \\
     \item Where it is taken from\\
     Python is released free of charge, so anyone can easily download it, and it is being updated continuously. In addition, modules developed with Python are continuously being updated and can be easily installed through anaconda, a virtual environment, or pip, an installation module. Various integrated development environments (IDE) and text editors are also supporting python. Ms. flask, SQL Alchemy, etc. Several modules used in Ms. TROMM can also be easily used by installing and importing them through pip or the like in a python environment. (https://www.python.org/downloads/) \\ \\
     \item How and why we use it\\
@@ -928,7 +938,7 @@ This is the table which shows directory, file name and module name.\\
     \item Functionality \\
     MySQL is an application that helps create and manage tables that can manage databases. To deal with MySQL (SQL), we need to be familiar with SQL language, but we were able to deal with SQL through Python code through SQL Alchemy's ORM. By connecting MySQL to the clearDB of the Heroku server, I was able to check in real-time whether the data was properly updated through JetBrain's Datagrip. In addition, through Heroku, real-time communication between the front and back end (database) was possible. Heroku, a free hosting server, allows users to receive Restful APIs from back-and-server or use Ms.TROMM services even in remote environments, not local to certain traffic.\\ \\
     \item Location of source code\\: Ms-TROMM/MsTROMM\_Backend/ \\ \\
-    \item Class component \\
+    \item Class component 
         \item[-] Ms-TROMM/MsTROMM\_Backend/procfile: Upload Github content to Heroku \\
         \item[-] Ms-TROMM/MsTROMM\_Backend/install.md: Connect MySQL and SQL Alchemy. File with MySQL DB URL. \\
         \item[-] Ms-TROMM/MsTROMM\_Backend/flaskr/settings.py: File with important DB URLs, API key values, and calendar access IDs \\ \\
@@ -940,7 +950,6 @@ This is the table which shows directory, file name and module name.\\
     When we select a database, which service to choose between SQL and NoSQL was an important issue. Due to the nature of Ms.TROMM's service, there is no service to be provided other than the existing database service, and SQL was adopted because it was judged that the service could be provided to users only by queries of the existing SQL service. In addition, it was decided to use MySQL, which was judged to be the most stable and popular among several SQLs. In addition, we judged that MySQL is a good choice because it is one of the SQLs that can easily and visually handle databases in conjunction with JetBrain's Datagrip. Several server hosting services were considered as servers that help manage these databases in real-time, but Heroku's clearDB service, which can be used free of charge, was linked to MySQL to conduct prototype tests using Heroku. \\ \\
 \end{enumerate}
 
-\break
 
 \section{USE CASES}
 
@@ -950,15 +959,14 @@ When the user goes to ‘App Store' or ‘Google Play Store' and searches the wo
 
 \subsection{Turn on the application}
 \centerline{\includegraphics[scale=0.5]{assets/flow_1.png}}
-When the user clicks the ‘Ms. TROMM’ application icon, the splash page of our application will be shown. If there is no history of logging in to our application on the user's mobile phone, the onboarding page will be displayed. The user can read the description of why the main functions on the onboarding screen. At the end of the onboarding screen, the user can go to the login or membership screen. If the user has a history of logging in to our application from the user's mobile phone, the login screen appears immediately instead of the onboarding screen.\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+When the user clicks the ‘Ms. TROMM’ application icon, the splash page of our application will be shown. If there is no history of logging in to our application on the user's mobile phone, the onboarding page will be displayed. The user can read the description of why the main functions on the onboarding screen. At the end of the onboarding screen, the user can go to the login or membership screen. If the user has a history of logging in to our application from the user's mobile phone, the login screen appears immediately instead of the onboarding screen. \\ \\
 
-\break
 
 \subsection{Login}
 \begin{enumerate}
     \item Enter ID(e-mail) and password\\
         The user must enter their ID(e-mail) and password in the ID and password fields for Login, respectively. \\ \\
-    \centerline{\includegraphics[scale=0.5]{assets/flow_2.png}}
+    \centerline{\includegraphics[scale=0.5]{assets/flow_2.png}} \\ \\
     \item Login Button\\
         \item[-] If the user’s ID and password are established: Approved\\
         \item[-] If the user’s ID and password are not established: Pop-up screen indicating that login failed\\
@@ -967,10 +975,8 @@ When the user clicks the ‘Ms. TROMM’ application icon, the splash page of ou
     \item Sign-up Button\\
         When clicking the password change button, it goes to the password change screen. The user can change the password after entering the ID information and receiving confirmation that the ID is in the DB.\\ \\
     \item Changing Password Button
-        When the user clicks the membership registration button, it goes to the Sign-up form page. \\ \\ \\ \\ \\ \\ \\
+        When the user clicks the membership registration button, it goes to the Sign-up form page. 
 \end{enumerate}
-
-\break
 
 \subsection{Sign-up}
 When the user presses the membership registration button, the membership form page is displayed. The membership form page requires five types of information. Users must agree to the terms and conditions of personal information utilization. \\ \\ 
@@ -1002,6 +1008,8 @@ Users who are new to log-in will go to the survey page. The first page of the su
         This page allows users to select their favorite scent. The user will be given a total of 6 options. Pop-up occurs that it may be difficult to apply the recommended information customized service when selecting "Not Here." \\ \\
 \end{enumerate}
 
+\break
+
 \subsection{Main Page}
 This is the main page of Ms. TROMM. Here, the user can check and manipulate approximate information on the application. \\ \\
 \centerline{\includegraphics[scale=0.5]{assets/flow_3.png}}
@@ -1028,6 +1036,8 @@ All recommendations occurring within this application are displayed once in the 
     \item Reminding\\\
         Based on the schedule information, it is displayed when a certain schedule is on the day of the user's schedule. Users can receive alarms that fit the schedule and check the schedule again or take care of the trivial things that can be forgotten. For example, on the day of the user's interview, a comment cheering for the interview is displayed. \\ \\
 \end{enumerate}
+
+\break
 
 \subsection{Notification}
 All pop-up notifications that have occurred within this application can be found in the notification menu accessible on the main page. If there is a pop-up that you haven't checked, the pop-up will be displayed in blue, and you can check what was displayed in the pop-up when you click. In particular, in the case of today's recommendation, you can go to today's recommendation menu by clicking "Go to Today's Recommendation" at the bottom as soon as you check it. Pop-ups that have already been read are displayed in white. Like the pop-up that you haven't checked, you can check the details by clicking. \\ \\
