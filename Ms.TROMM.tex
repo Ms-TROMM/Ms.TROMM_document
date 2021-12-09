@@ -89,11 +89,14 @@ In addition to this, LG increased device accessibility by linking its app called
 However, we found that most users always worry in front of the Styler, "What should I wear tomorrow?" This is because they put clothes in the Styler to take full care of them for tomorrow schedule. In this situation, we have introduced an AI-based recommendation system(hereinafter referred to as ‘Ms.TROMM’) to Styler to reduce this time of concern and promote consumer-centered value. 
 
 Ms.TROMM recommends modes that can be operated by the Styler, styling, and scent. First,  Ms.TROMM makes recommendations based on the user's calendar. By linking the calendar, Styler mode is recommended according to the user's schedule, and user can select the Styler operation by their preference. Second, Ms.TROMM uses the weather API to recommend suitable for the weather or a Styler mode that suits with weather. Third, Ms.TROMM identifies the clothes and the material of the clothes in the Styler and recommends the appropriate Styler mode and styling information for the clothes. Finally, data is accumulated through the process of receiving user feedback after all recommendations, and Ms.TROMM provides more sophisticated personalized recommendations. Through this, people can reduce their time of concern in front of the styler every evening or morning, and the need for a styler in our lives will also increase. Also, it is expected that users will be able to receive positive values for LG and styler if Ms.TROMM is installed in the ‘LG ThinQ’ application. We plan to create this application with an emphasis on increasing the satisfaction of styler users through Ms.TROMM, a system that allows users to use stylers and experience better.
+
+\break
+
 \subsection{Problem Statement}\label{SCM}
 \begin{itemize}
-\item There is an application called ‘LG ThinQ’ as a mobile application that can be used in conjunction with LG home appliances. We thought that it would be better if a recommendation function was included in this application
-\item It is very useful to use a styler to manage clothes, but since it takes a lot of time to manage clothes, there is a time constraint to take care of clothes to wear right away in the morning.
-\item Therefore, we thought that the styler could be used more effectively if there was software that knew the user’s schedule and weather and sent a message to manage clothes in advance.
+\item There is an application called ‘LG ThinQ’ as a mobile application that can be used in conjunction with LG home appliances. We thought that it would be better if a recommendation function was included in this application\\
+\item It is very useful to use a styler to manage clothes, but since it takes a lot of time to manage clothes, there is a time constraint to take care of clothes to wear right away in the morning.\\
+\item Therefore, we thought that the styler could be used more effectively if there was software that knew the user’s schedule and weather and sent a message to manage clothes in advance.\\
 \item The software recommends clothes that users will like in the future based on feedback on past users’ tastes and recommendations. In other words, it helps you to use the styler efficiently by controlling the past and the future at once.\\
 \end{itemize}
 
@@ -140,30 +143,25 @@ Users can check the functions in the app at once on the main page. \\
     \item Current my house widget: The user can check the temperature and humidity of your house.\\
 \end{enumerate}
 
-\subsection{Pop-up notification}
+\subsection{Pop-up}
 Recommendations and styler-related information from Ms. TROMM are displayed through pop-ups.\\
 \begin{enumerate}
-    \item Today's Recommendation Pop-up: consists of buttons that receive content and user responses.\\
-    \item Control Recommendation Pop-up: consists of content and confirmation buttons.\\
-    \item General pop-up: consists of content and confirmation buttons.\\
+    \item Today's Recommendation notification: consists of content and buttons that receive content and user responses.\\
+    \item Control Recommendation notification: consists of content and confirmation buttons.\\
+    \item Weather notification: consists of content and confirmation buttons.\\
+    \item Schedule reminding: consists of content and confirmation buttons. \\
+    \item Learning notification: consists of content and buttons that receive content and user responses.\\
 \end{enumerate}
 
 \subsection{Notification}
-It is a menu in which all pop-ups are displayed within Ms. TROMM. Everything the user has seen is recorded.\\
+It is a menu in which all pop-ups are displayed within Ms. TROMM. All pop-ups that the user has seen is recorded here. It is activated only when the app push notification is turned on.\\
 
 \subsection{Recommendation}
 It is a menu where recommendations are exposed. In this menu, users can check two tabs: today's recommendation based on schedule and weather, and control recommendation using clothing information in the styler. When the user first enters the recommendation menu, a page with a description of each element in the recommendation menu is exposed. If the user wants to see the recommendation and run the fragrance control system inside the styler, the user can click on the fragrance recommendation list to run it.\\
 \begin{enumerate}
-    \item Menu description screen: Exposed when entering for the first time.\\
+    \item Button description screen: Exposed when entering for the first time.\\
     \item Move the recommended menu: Check and move the two recommended tabs with the menu button at the top.\\
-    \item  Apply Scent: You can apply the recommended scent within the styler with a pop-up that appears by pressing the Scent button.\\
-\end{enumerate}
-
-\subsection{My Closet}
-My closet is a menu that can be accessed anywhere in Ms. TROMM with floating action buttons. You can see the registered clothes in my closet, and you can check the information you entered when registering clothes. And each outfit tells you how many stylers you need in a comment.\\
-\begin{enumerate}
-    \item Information Check: The information you wrote when you registered your clothes, the registration date of your clothes, and the date you last put your clothes in the styler are exposed.\\
-    \item Register new clothes: Ms. You can register new clothes in TROMM DB. This information is linked to a smart mirror. When registering new clothes, a form screen appears to enter the information on the clothes.\\
+    \item Apply Scent: You can apply the recommended scent within the styler with a pop-up that appears by pressing the Scent button.\\
 \end{enumerate}
 
 \subsection{Styler}
@@ -173,25 +171,41 @@ This menu is linked to the styler so that the user can control the styler in thi
     \item Choose a styler course\\
 \end{enumerate}
 
+\subsection{My Closet}
+My closet is a menu that can be accessed anywhere in Ms. TROMM with floating action buttons. The user can see the registered clothes in my closet, and can check the information he or she entered when registering clothes. And each outfit tells you how many stylers you need in a comment.\\
+\begin{enumerate}
+    \item Information Check: The information the user wrote when you registered your clothes, the registration date of your clothes, and the date you last put your clothes in the styler are exposed.\\
+    \item Register new clothes: The user can register new clothes in Ms. TROMM DB. This information is linked to a smart mirror. When registering new clothes, a form screen appears to enter the information on the clothes.\\
+    \item Change the content: Modify what the user entered when registering clothes. 
+\end{enumerate}
+
 \subsection{All}
 This is a menu that allows users to check the basic application information. You can check the application version information in this menu. In addition, you need a function that allows users to check and modify what they wrote when signing up. And you can check the terms and conditions of personal information used within the application.\\
+
+\break
 
 \section{DEVELOPMENT ENVIRONMENT }
 \subsection{Choice of software development platform}
 Our main development environment is Windows and MacOS. In the case of Windows, terminals that can be used even in windows such as Powershell were used to create a linux environment, and in the case of MacOS, built-in linux environment and terminals were used. Ms.TROMM in order for consumers to receive recommendations faster and immediately control devices such as stylers and smart mirror. Ms.TROMM was manufactured based on mobile applications. In addition, Ms.TROMM so that more users can use it in various mobile operating systems. The frontend framework of Ms.TROMM selected 'Flutter', a representative cross-platform framework. Currently, Google's Android accounts for the majority of global mobile platforms, and Apple's iPhone accounts for about 15\%, but Apple's iPhone users' consumption patterns and loyalty to electronics are quite different from Android users, and iPad, which accounts for a large portion of the tablet market, so the actual usage rate is very high. In fact, looking at the mobile operating system market share, including the tablet market, it can be seen that the proportion of iOS (including iPadOS) has increased by about 30\%. Therefore, we have adopted Flutter, a mobile/web/desktop cross-platform framework launched by Google based on the Dart Programming language, as a frontend framework, satisfying all of these demands and further considering future desktop applications. In the case of backend server, Python-based Flask, which implements artificial intelligence-based services and has well-established statistical and analysis packages, was adopted. Flask has the advantage of being easy to create API servers and very light. In addition, since Flask has a high degree of freedom, such as being able to change and respond immediately according to the purpose of development when there is not much time left, It was adopted because it was considered the most suitable web framework for Ms.TROMM development.\\ \\ 
 
-\begin{figure}[]
-\centerline{\includegraphics{assets/그림1.png}}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=0.9]{assets/그림1.png}}
 \caption{Mobile \& Tablet OS Market Share Rate}
 \label{fig}
 \end{figure}
 
 \begin{figure}[]
-\centerline{\includegraphics{assets/그림12png.png}}
+\centerline{\includegraphics[scale=0.9]{assets/그림12png.png}}
 \caption{TIOBE INDEX}
 \label{fig}
 \end{figure}
 
+\begin{figure}[h]
+\centerline{\includegraphics[scale=0.9]{assets/flutter.png}}
+\caption{Cross-platfrom framework 'Flutter'}
+\label{fig}
+\end{figure}
+\break
 
 \begin{table}[ht]
     \centering
@@ -220,9 +234,9 @@ Our main development environment is Windows and MacOS. In the case of Windows, t
     \hline
     \multicolumn{1}{l|}{\textit{\textbf{Tools and Language}}} & \textit{\textbf{Reason}} 
      & & \\ \hline
-    \textit{\textbf{Python}} & \begin{tabular}[c]{@{}l@{}} Python is one of the programming languages \\ that many people love around the world. \\ TIOBE announces the rankings of world-\\famous programming languages every month,\\ representing them as "TIOBE INDEX,"\\ and Python was ranked No. 1 programming \\ language loved by people around the world as \\ of November 2021. Python is also the base \\ language for Flask, a web server framework, \\ but it provides excellent modules related \\ to artificial intelligence. In addition, it provides \\ a Pandas, Numpy module, etc. necessary for \\ data analysis and processing of collected data. \end{tabular} \\ \hline
-    \textit{\textbf{MySQL}} & \begin{tabular}[c]{@{}l@{}} We need a database that stores data from users \\ who signed up for membership to use the \\ Ms.TROMM service, stores schedule data \\ used for recommendations, and responses from \\ users, and provides better service \\ recommendations based on this. Therefore, \\ we intend to manage the basic database \\ using MySQL. \end{tabular} \\ \hline
-    \textit{\textbf{Flutter(Dart)}} & \begin{tabular}[c]{@{}l@{}} Flutter is a Dart language-based cross-platform \\ framework launched by Google. So, \\ Ms.TROMM was developed based on Flutter \\ so that it could be expanded to web and \\ desktop apps in the future. In addition, \\ even though it is a cross-platform, it provides \\ native-class performance and various extensions, \\ makes it easy to check the UI in a simple \\ virtual environment, and supports plug-ins \\ from famous IDE and code editors, so Flutter \\ was selected as the frontend framework. \end{tabular} \\ \hline
+    \textit{\textbf{Python}} & \begin{tabular}[c]{@{}l@{}} \\ Python is one of the programming languages \\ that many people love around the world. \\ TIOBE announces the rankings of world-\\famous programming languages every month,\\ representing them as "TIOBE INDEX,"\\ and Python was ranked No. 1 programming \\ language loved by people around the world as \\ of November 2021. Python is also the base \\ language for Flask, a web server framework, \\ but it provides excellent modules related \\ to artificial intelligence. In addition, it provides \\ a Pandas, Numpy module, etc. necessary for \\ data analysis and processing of collected data. \\ \\ \end{tabular} \\ \hline
+    \textit{\textbf{MySQL}} & \begin{tabular}[c]{@{}l@{}} \\ We need a database that stores data from users \\ who signed up for membership to use the \\ Ms.TROMM service, stores schedule data \\ used for recommendations, and responses from \\ users, and provides better service \\ recommendations based on this. Therefore, \\ we intend to manage the basic database \\ using MySQL. \\ \\ \end{tabular} \\ \hline
+    \textit{\textbf{Flutter(Dart)}} & \begin{tabular}[c]{@{}l@{}} \\ Flutter is a Dart language-based cross-platform \\ framework launched by Google. So, \\ Ms.TROMM was developed based on Flutter \\ so that it could be expanded to web and \\ desktop apps in the future. In addition, \\ even though it is a cross-platform, it provides \\ native-class performance and various extensions, \\ makes it easy to check the UI in a simple \\ virtual environment, and supports plug-ins \\ from famous IDE and code editors, so Flutter \\ was selected as the frontend framework. \\ \\ \end{tabular} \\ \hline
     \end{tabular}
     \renewcommand{\thetable}{\arabic{table}}
     \captionsetup{justification=centering}
@@ -230,16 +244,10 @@ Our main development environment is Windows and MacOS. In the case of Windows, t
     \label{tab:table}
 \end{table}
 
-
-\begin{figure}[htbp]
-\centerline{\includegraphics{assets/flutter.png}}
-\caption{Cross-platfrom framework 'Flutter'}
-\label{fig}
-\end{figure}
-\break
-
 \subsection{Cost estimation}
-To implement Ms.TROMM, it was necessary to obtain data from the database or to obtain real-time information from the server while communicating with the server in real-time. Therefore, real-time servers were hosted or several APIs were needed. However, in the process of development, we tried to develop open APIs, free modules, and free servers first. Therefore, the server also implemented a real-time server through the Heroku service, which is a server that provides free hosting up to certain traffic. In addition, the process of bringing up weather and calendar information used open APIs that were released free of charge to Google and others. However, JetBrain's Datagrip was used in the process of controlling data, and this application is provided free of charge only to students. Later, Ms.If the TROMM service is expanded, traffic on the server may increase and various copyright problems may occur, so it would be desirable to use paid services when expanding the service. \\ \\ \\ \\ \\
+To implement Ms.TROMM, it was necessary to obtain data from the database or to obtain real-time information from the server while communicating with the server in real-time. Therefore, real-time servers were hosted or several APIs were needed. However, in the process of development, we tried to develop open APIs, free modules, and free servers first. Therefore, the server also implemented a real-time server through the Heroku service, which is a server that provides free hosting up to certain traffic. In addition, the process of bringing up weather and calendar information used open APIs that were released free of charge to Google and others. However, JetBrain's Datagrip was used in the process of controlling data, and this application is provided free of charge only to students. Later, Ms.If the TROMM service is expanded, traffic on the server may increase and various copyright problems may occur, so it would be desirable to use paid services when expanding the service.
+
+\break
 
 \subsection{Software in use}
 \begin{enumerate}
@@ -247,87 +255,102 @@ To implement Ms.TROMM, it was necessary to obtain data from the database or to o
     \centerline{\includegraphics[scale=0.30]{assets/thinkq.jpg}}
 
         LG Electronics uses the 'LG ThinQ', an application to control its smart home appliances. In addition, in the case of smart mirror, it can be controlled through the 'LG Smart Home' as a key home appliance for the smart home ecosystem that will be built as soon as possible. Through these two apps, LG Electronics will bridge users and smart devices so that users can monitor and control their homes anytime, anywhere. Our application is also an app to build a better ecosystem between users and smart devices. Our app is a smart assistant-like application that integrates the environment in which users use smart devices, checks minor things in advance that users may miss, and recommends the best way. \\ \\
-    \\ 
+    
     \item VSCode(Visual Studio Code) \\ \\
-    \centerline{\includegraphics{assets/vs.png}}
-    VSCode is an open source-based text editor published by Microsoft. VSCode is a text editor, not an IDE, but has the advantage of being able to install various expansion packs. In addition, it has its own terminal function. Supporting various languages, The development environment for data and artificial intelligence technologies used by Ms.TROMM is excellent. In addition, VSCode was adopted as a text editor because of its excellent interworking with Git, a version control system.\\ \\ \\ \\ 
-    \item GitHub\\\\
-    \includegraphics[scale=0.9]{assets/Gtib.png}
-    \\ \\ GitHub serves as a repository for Git, a distributed version control system. During development, several people go through a collaborative process of adding and deleting various functions, which can lead to confusion in this process without a version control system. Github is a web-based service that allows you to intuitively understand the team members' version control process. In addition, simple processes such as simply uploading and downloading files can be easily controlled using GUI tools such as Github Desktop. \\
+    \centerline{\includegraphics[scale=0.9]{assets/vs.png}}
+    VSCode is an open source-based text editor published by Microsoft. VSCode is a text editor, not an IDE, but has the advantage of being able to install various expansion packs. In addition, it has its own terminal function. Supporting various languages, The development environment for data and artificial intelligence technologies used by Ms.TROMM is excellent. In addition, VSCode was adopted as a text editor because of its excellent interworking with Git, a version control system.
     
     \break
+    
+    \item GitHub\\\\
+    \includegraphics[scale=0.9]{assets/Gtib.png}
+    GitHub serves as a repository for Git, a distributed version control system. During development, several people go through a collaborative process of adding and deleting various functions, which can lead to confusion in this process without a version control system. Github is a web-based service that allows you to intuitively understand the team members' version control process. In addition, simple processes such as simply uploading and downloading files can be easily controlled using GUI tools such as Github Desktop. \\\\\\\\\\\\\\\\\\
+    
     
     \item Android Studio \\ 
     \centerline{\includegraphics[scale=0.9]{assets/as.png}}
-    In the case of Ms.TROMM, since it is basically a mobile app, an integrated development environment (IDE) for mobile apps was needed, and Android Studio, which team members were relatively familiar with, was adopted as IDE. Both Flutter and Android Studio, which we adopted as the Frontend Framework, are platforms announced by Google, so they are highly interconnected, so there was no big problem in developing them. The advantage of being able to develop while checking the progress of the app through the UI is also the reason for adopting Android Studio. \\\\\\\\\\\\
+    In the case of Ms.TROMM, since it is basically a mobile app, an integrated development environment (IDE) for mobile apps was needed, and Android Studio, which team members were relatively familiar with, was adopted as IDE. Both Flutter and Android Studio, which we adopted as the Frontend Framework, are platforms announced by Google, so they are highly interconnected, so there was no big problem in developing them. The advantage of being able to develop while checking the progress of the app through the UI is also the reason for adopting Android Studio. 
+
+    \break
     
     \item Heroku\\\\
     \includegraphics{assets/Heroku.png}
-    \\ \\ Heroku is a service that allows free hosting of websites through git. It is a cloud platform as a service (PaaS) that supports multiple programming languages. In general, when developing or implementing an app, it provides a platform that enables applications to be developed, executed, and managed without the complexity of creating and maintaining related infrastructure. \\
+    \\ \\ Heroku is a service that allows free hosting of websites through git. It is a cloud platform as a service (PaaS) that supports multiple programming languages. In general, when developing or implementing an app, it provides a platform that enables applications to be developed, executed, and managed without the complexity of creating and maintaining related infrastructure. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
     
-    \break
-    
-    \item Firebase\\\\
+    \item Firebase \\ \\
     \includegraphics[scale=0.7]{assets/firebase.png}
-    \\ \\ Firebase is a backend as a service (BaaS) that provides the necessary functions for web and mobile development. In other words, it is a service that helps you focus on front-end development without designing or implementing servers separately through back-end development. Features include real-time databases, easy user authentication, cloud storage, hosting, app testing, and profit generation. \\
-    
+    \\ \\ \\ Firebase is a backend as a service (BaaS) that provides the necessary functions for web and mobile development. In other words, it is a service that helps you focus on front-end development without designing or implementing servers separately through back-end development. Features include real-time databases, easy user authentication, cloud storage, hosting, app testing, and profit generation.  
+
+\break   
+
     \item DBdiagram \\ \\
-    \centerline{\includegraphics[scale=0.9]{assets/DB.png}}
-    \\ It is a free, simple tool to draw ER diagrams by just writing code. So, the user can draw entity-relationship diagrams, painlessly. ERD is a very important development product because it can be used to see the model at a glance when implementing functions. Using this site, ERD can be configured through a code similar to SQL. If related codes such as tables and indexes are inserted without drawing ERD separately, ERD is automatically generated. It is also very useful because it can be modified based on code even when modifying.\\ \\
+    \centerline{\includegraphics[scale=0.8]{assets/DB.png}}
+    \\ \\ \\ It is a free, simple tool to draw ER diagrams by just writing code. So, the user can draw entity-relationship diagrams, painlessly. ERD is a very important development product because it can be used to see the model at a glance when implementing functions. Using this site, ERD can be configured through a code similar to SQL. If related codes such as tables and indexes are inserted without drawing ERD separately, ERD is automatically generated. It is also very useful because it can be modified based on code even when modifying.\\ \\ \\ \\ \\ \\
 
     \item MySQL \\ \\
     \centerline{\includegraphics[scale=0.1]{assets/MySQL.png}}
-    \\ MySQL is the most widely used open-source database worldwide. It is an open-source relational database management system (RDBMS) that uses the standard database query language SQL (Structured Query Language) and features very fast, flexible, and easy to use. It supports multi-user, multi-threads, and provides an application interface (API) for C, C++, Eiffel, Java, Pearl, PHP, Python scripts, and the like. It can be used in Unix, Linux, and Windows operating systems. The Linux operating system, Apache server program, MySQL, and PHP script language composition are free programs that are developed as open-source despite good interworking, so MySQL was also adopted in the development of Ms. TROMM.\\ \\ 
-    
+    \\ MySQL is the most widely used open-source database worldwide. It is an open-source relational database management system (RDBMS) that uses the standard database query language SQL (Structured Query Language) and features very fast, flexible, and easy to use. It supports multi-user, multi-threads, and provides an application interface (API) for C, C++, Eiffel, Java, Pearl, PHP, Python scripts, and the like. It can be used in Unix, Linux, and Windows operating systems. The Linux operating system, Apache server program, MySQL, and PHP script language composition are free programs that are developed as open-source despite good interworking, so MySQL was also adopted in the development of Ms. TROMM.
+
+\break 
+   
     \item SQLAlchemy \\ \\
-    \centerline{\includegraphics[scale=0.1]{assets/sqlalchemy.jpg}}
-    \\ SQLAlchemy is an open-source SQL toolkit and object-relational mapper (ORM) for the Python programming language. The advantage is that it is possible to focus on business logic with object-oriented code. It also increases reuse and maintenance convenience and reduces dependence on DBMS. Because of these advantages, we decided to use SQLAlchemy with Ms. TROMM's recommendation system.\\ \\ \\ \\ 
+    \centerline{\includegraphics[scale=0.27]{assets/sqlalchemy.jpg}}
+    \\ SQLAlchemy is an open-source SQL toolkit and object-relational mapper (ORM) for the Python programming language. The advantage is that it is possible to focus on business logic with object-oriented code. It also increases reuse and maintenance convenience and reduces dependence on DBMS. Because of these advantages, we decided to use SQLAlchemy with Ms. TROMM's recommendation system.\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \ 
     
     \item Datagrip \\ \\
     \centerline{\includegraphics[scale=0.5]{assets/datagrip.png}}
-    \\ A DBA tool which is aimed at developers who work with SQL databases. In other words, it is a GUI development tool that facilitates DB development and management. A lite version of DataGrip is embedded within the Ultimate edition of some of JetBrains' IDEs.\\ \\ \\ \\ 
-    
-    \break
-    
+    \\ A DBA tool which is aimed at developers who work with SQL databases. In other words, it is a GUI development tool that facilitates DB development and management. A lite version of DataGrip is embedded within the Ultimate edition of some of JetBrains' IDEs.
+
+ \break
+   
     \item flask\\ \\
     \centerline{\includegraphics[scale=0.5]{assets/flask.png}}
-    Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers, form validation, upload handling, various open authentication technologies and several common framework related tools. \\ \\ \\ \\ \\ \\ \\ \\
-    
+    Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers, form validation, upload handling, various open authentication technologies and several common framework related tools. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+ 
     \item numpy \\ \\
     \centerline{\includegraphics[scale=0.5]{assets/numpy.png}}
-    NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.The ancestor of NumPy, Numeric, was originally created by Jim Hugunin with contributions from several other developers. In 2005, Travis Oliphant created NumPy by incorporating features of the competing Numarray into Numeric, with extensive modifications. NumPy is open-source software and has many contributors. NumPy is a NumFOCUS fiscally sponsored project. \\ \\
-    
-    \break
+    NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.The ancestor of NumPy, Numeric, was originally created by Jim Hugunin with contributions from several other developers. In 2005, Travis Oliphant created NumPy by incorporating features of the competing Numarray into Numeric, with extensive modifications. NumPy is open-source software and has many contributors. NumPy is a NumFOCUS fiscally sponsored project. 
+
+ \break    
     
     \item pandas \\ \\
     \centerline{\includegraphics[scale=0.2]{assets/pandas.PNG}}
-    Pandas is a software library for analyzing and manipulating data written in Python language. Pandas provide data for manipulating and operating numerical tables and time-series data, which can be used free of charge under Article 3 BSD license conditions. Pandas is named after the first letter of "PANel DATA," a term used in econometrics. Pandas use a structure called DataFrame modeled after the data. Frame structure used in R, many of the functions used in data. The frame of R can be used without difficulty. Moreover, because Python operates on a language-based basis with good accessibility, it has become an essential library for those who enter Python for data analysis. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+    Pandas is a software library for analyzing and manipulating data written in Python language. Pandas provide data for manipulating and operating numerical tables and time-series data, which can be used free of charge under Article 3 BSD license conditions. Pandas is named after the first letter of "PANel DATA," a term used in econometrics. Pandas use a structure called DataFrame modeled after the data. Frame structure used in R, many of the functions used in data. The frame of R can be used without difficulty. Moreover, because Python operates on a language-based basis with good accessibility, it has become an essential library for those who enter Python for data analysis. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ 
+    
     
     \item Marshmallow \\ \\
     \centerline{\includegraphics [scale=0.3] {assets/marshmallow.png}}
-    Marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from native Python datatypes. Marshmallow schemas can be used to validate input data. And it can be used to deserialize input data to app-level objects. Also it can be used to serialize app-level objects to primitive Python types. The serialized objects can then be rendered to standard formats such as JSON for use in an HTTP API \\ \\
+    Marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from native Python datatypes. Marshmallow schemas can be used to validate input data. And it can be used to deserialize input data to app-level objects. Also it can be used to serialize app-level objects to primitive Python types. The serialized objects can then be rendered to standard formats such as JSON for use in an HTTP API  
+
+ \break
     
     \item Swagger \\ 
     \centerline{\includegraphics{assets/Swagger.png}}
-    Swagger is a framework for Open API Specification (OAS). Swagger is used together with a set of open-source software tools to design, build, document, and use RESTful web services. Swagger includes automated documentation, code generation (into many programming languages), and test-case generation. Simply put, Swagger is an API Spec document. The method of managing APIs through Excel or guide documents requires periodic updates, so it is not easy to manage and takes a long time. So, we can easily manage and test API documents by automating API Spec documents using Swagger. \\ \\   
+    Swagger is a framework for Open API Specification (OAS). Swagger is used together with a set of open-source software tools to design, build, document, and use RESTful web services. Swagger includes automated documentation, code generation (into many programming languages), and test-case generation. Simply put, Swagger is an API Spec document. The method of managing APIs through Excel or guide documents requires periodic updates, so it is not easy to manage and takes a long time. So, we can easily manage and test API documents by automating API Spec documents using Swagger. \\ \\ \\ \\ \\ \\ \\
 
     \item XCode \\ 
     \centerline{\includegraphics[scale=0.3]{assets/xcode.png}}
-    Xcode consists of a suite of tools that developers use to build apps for Apple platforms. Use Xcode to manage your entire development workflow — from creating your app to testing, optimizing, and submitting it to the App Store.\\ \\ \\ \\
+    Xcode consists of a suite of tools that developers use to build apps for Apple platforms. Use Xcode to manage your entire development workflow — from creating your app to testing, optimizing, and submitting it to the App Store.
+
+ \break
     
     \item Google API \\ 
     \centerline{\includegraphics[scale=0.3]{assets/googleapi.jpg}}
-    API is an application programming interface that allows users to exchange requests and responses from different programs such as clients and servers. API allows products/services to communicate with each other without knowing how to implement them and saves time and money by simplifying the application development process. It is divided into an open API and a private API according to the method and purpose of use. Open APIs can be easily accessed and shared by anyone, and private APIs provide information only to some authorized users. (Google API is an open API.) \\ \\ 
-    
+    API is an application programming interface that allows users to exchange requests and responses from different programs such as clients and servers. API allows products/services to communicate with each other without knowing how to implement them and saves time and money by simplifying the application development process. It is divided into an open API and a private API according to the method and purpose of use. Open APIs can be easily accessed and shared by anyone, and private APIs provide information only to some authorized users. (Google API is an open API.) \\ \\ \\ \\ \\ \\
+ 
     \item Adobe XD \\ \\
     \includegraphics[scale=0.9]{assets/XD.png}
-     \\ \\Adobe XD is an application for prototyping PCs, mobile Internet pages, and mobile apps released by Adobe. Since Ms.TROMM is a mobile app-based service, it was necessary to think about how users could feel the best experience when providing the app. Therefore, it is possible to intuitively prototype the operation of an Internet page or app operating in a corresponding environment through Adobe XD. In addition, the app development can be made easier by linking the prototype made in this way with Zeplin.\\ \\ \\ \\
-    
+     \\ \\Adobe XD is an application for prototyping PCs, mobile Internet pages, and mobile apps released by Adobe. Since Ms.TROMM is a mobile app-based service, it was necessary to think about how users could feel the best experience when providing the app. Therefore, it is possible to intuitively prototype the operation of an Internet page or app operating in a corresponding environment through Adobe XD. In addition, the app development can be made easier by linking the prototype made in this way with Zeplin.
+
+ \break
+   
     \item Zeplin\\ \\
     \includegraphics[scale=0.32]{assets/Zp.jpg}
-    Zeplin is a software that helps designers and developers collaborate, and through Zeplin, you can convert design elements into development information (e.g., font, size, size, etc.). While developing apps through Zeplin, you can solve problems that may not be faithful to functional implementation while calculating design elements too deeply. 
-    
+    Zeplin is a software that helps designers and developers collaborate, and through Zeplin, you can convert design elements into development information (e.g., font, size, size, etc.). While developing apps through Zeplin, you can solve problems that may not be faithful to functional implementation while calculating design elements too deeply.\\\\\\
+ 
 \end{enumerate}{}
+
+\break
 
 \subsection{Task distribution} 
 \begin{table} [h]
@@ -336,41 +359,45 @@ To implement Ms.TROMM, it was necessary to obtain data from the database or to o
     \hline
     \textit{\textbf{Tasks}} & \textit{\textbf{Name}} & \textit{\textbf{Description}}
      & & & \\ \hline
-    \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Frontend\\ Developer\end{tabular}}} & \textit{GA HEE HAN} & \begin{tabular}[c]{@{}l@{}} The front-end development job performs \\ work on business logic configuration and \\ user interface through the output and \\ input of data from the backend application \\ programming interface (API). In short, \\ it can be said that it is the job of \\ developing everything the user sees with \\ his or her eyes. It is the first impression \\ of Ms. TROMM  because it is the first part \\ that the user searches for service \\ information and sees when using it.\\ The fact that it serves as an intermediate \\ bridge between the backend and \\ the planning is also a feature that\\ distinguishes other jobs from frontend \\ development. \end{tabular} \\ \hline
-    \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Backend\\ Developer\end{tabular}}} & \textit{\textbf{\begin{tabular}[c]{@{}l@{}}EO JIN LEE\\ JIN HO KIM\end{tabular}}} & \begin{tabular}[c]{@{}l@{}} Backend development implements the overall \\ logic of all services, including cloud and \\ hosting, provided by Ms. TROMM. \\ Backend developers develop APIs to respond \\ to requests from clients on API servers. \\ In addition, backend developers will design \\ a table (space) that can conceptually separate \\ data in the application for database \\ management. Finally, we use the cloud to \\ build servers.  \end{tabular} \\ \hline
-    \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Product\\ Designer\end{tabular}}} & \textit{YU JIN HER} & \begin{tabular}[c]{@{}l@{}} The product designer conceives what functions \\ are needed and how to implement them based \\ on the requirements for Ms. TROMM.\\ To analyze requirements, product designer\\ benchmarks users, designs, services \\ comprehensively and derives insights. \\ Based on Insight, find appropriate ways \\ to meet the requirements, establish service \\ policies and processes, and design screens. \end{tabular} \\ \hline
+    \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Frontend\\ Developer\end{tabular}}} & \textit{GA HEE HAN} & \begin{tabular}[c]{@{}l@{}} \\ The front-end development job \\ performs work on business logic \\ configuration and user interface through\\ the output and input of data from \\ the backend application programming \\ interface (API). In short, it can be said \\ that it is the job of developing \\ everything the user sees with his or \\ her eyes. It is the first impression \\ of Ms. TROMM  because it is the first \\ part that the user searches for service \\ information and sees when using it.\\ The fact that it serves as an intermediate \\ bridge between the backend and \\ the planning is also a feature that \\ distinguishes other jobs from frontend \\ development. \\\\ \end{tabular} \\ \hline
+    \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Backend\\ Developer\end{tabular}}} & \textit{\begin{tabular}[c]{@{}l@{}}EO JIN LEE\\ JIN HO KIM\end{tabular}} & \begin{tabular}[c]{@{}l@{}} \\ Backend development implements \\ the overall logic of all services, \\ including cloud and hosting, \\ provided by Ms. TROMM. Backend \\ developers develop APIs to respond \\ to requests from clients on \\ API servers. In addition, backend \\ developers will design a table (space) \\ that can conceptually separate \\ data in the application for database \\ management. Finally, we use \\ the cloud to build servers.\\\\ \end{tabular} \\ \hline
+    \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Product\\ Designer\end{tabular}}} & \textit{YU JIN HER} & \begin{tabular}[c]{@{}l@{}} \\ The product designer conceives what \\ functions are needed and how to \\ implement them based on the \\ requirements for Ms. TROMM.\\ To analyze requirements, product \\ designer benchmarks users, designs, \\ services comprehensively and derives \\ insights. Based on Insight, find appropriate \\ ways to meet the requirements, establish \\ service policies and processes, and \\ design screen \\\\\end{tabular} \\ \hline
     \end{tabular}
     \renewcommand{\thetable}{\arabic{table}}
     \caption{Task distribution of Members}
     \label{table}
 \end{table}    
 
+\textcolor[rgb]{1,1,1}{(This is blank)} \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ 
+\break
+
 \section{SPECIFICATION}
     \begin{figure}[htbp]
 \centerline{\includegraphics[scale=0.2]{assets/Whole application.jpg}}
 \label{fig}
 \end{figure}
-This picture shows our whole application. Ms. TROMM's recommendation system provides recommendations to users. At this time, the user's reaction is recorded in the DB, and the recommendation system proceeds with learning based on this reaction. And when the next recommendation situation comes, the recommendation system provides recommendations to users again. \\ \\ \\ \\ 
+This picture shows our whole application. Ms. TROMM's recommendation system provides recommendations to users. At this time, the user's reaction is recorded in the DB, and the recommendation system proceeds with learning based on this reaction. And when the next recommendation situation comes, the recommendation system provides recommendations to users again. \\ 
 
 \subsection {Entry} \\
 \begin{enumerate}
     \item Splash screen \\ \\
      \centerline{\includegraphics[scale=0.32]{assets/스플래쉬 화면.jpg}}
     \begin{itemize}
-    \item[] This is the start page when you run the app. It is exposed for 1 to 2 seconds not to show an empty page during the app's data loading time.
+    \item[] This is the start page when you run the app. It is exposed for 1 to 2 seconds not to show an empty page during the app's data loading time.\\\\
     \end{itemize}
-    
-    \break
+
+\break
     
     \item Onboarding screen \\ \\
     \centerline{\includegraphics[scale=0.25]{assets/온보딩.png}}
     \begin{itemize}
     \item[] It is a page that prevents the deletion of apps by clearly showing users the reason for the existence of apps. It consists of a total of three pages explaining why Ms.TROMM's main functions and functions are useful.\\ \\ \\
     \end{itemize}
+    
     \item Onboarding Button \\ \\
     {\includegraphics[scale=0.75]{assets/온보딩_다음.jpg}}
     \begin{itemize}
-    \item[] Put the next button at the bottom of the page so that you can move on to the next page.
+    \item[] Put the next button at the bottom of the page so that you can move on to the next page. \\ \\ 
     \end{itemize}
     {\includegraphics[scale=0.75]{assets/온보딩_로그인.jpg}}
     \begin{itemize}
@@ -378,7 +405,8 @@ This picture shows our whole application. Ms. TROMM's recommendation system prov
     \\ If you have login data on your phone, do not expose the onboarding page. When the splash screen is terminated, the login page is immediately exposed.
     \end{itemize}
     \end{enumerate}
-    \break
+
+\break
 
 \subsection {Login} 
 Ms.TROMM receives two types of information (email, password) for login.\\
@@ -388,22 +416,26 @@ Ms.TROMM receives two types of information (email, password) for login.\\
     \begin{itemize}
     \item[] A login form screen appears where you can enter your email and password. The login button is exposed at the bottom of the field, and there are buttons below the button to sign up for membership and go to the password change page. \\
     \end{itemize}
+    
     \item Login failed screen \\\\
     \centerline{\includegraphics[scale=0.32]{assets/로그인2.jpg}}
     \begin{itemize}
     \item[] If login information that is not in the DB is entered, login failed and a pop-up with 'Please check your email and password again!' comment is displayed at the bottom. When you click the gray area or 'x button' or 'OK button', the pop-up will end and the previous one will be exposed again. \\ \\
     \end{itemize}
-    \item Changing the password \\ \\ \\
+    \item Changing the password \\ \\
     \centerline{\includegraphics[scale=0.32]{assets/비밀번호 변경.jpg}}
     \begin{itemize}
     \item[] It is a page that supports password change when a user forgets his or her password. In the case of e-mail input, there is an e-mail confirmation field to verify that it is currently in DB. Hereinafter, there is a field where a new password can be set, and there is a password confirmation field to prevent password errors. \\ \\ 
     \end{itemize}
     \end{enumerate}
-    
+
+\textcolor[rgb]{1,1,1}{(This is blank)} \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+
+\break 
+   
 \subsection{Sign up}
 This is the membership form page. Ms.TROMM receives three types of information (name, e-mail, password) when signing up for membership. We plan to add documents and personal information utilization tabs that say this information is only used within Ms.TROMM. \\ \\ 
 
-\break
 
 \begin{enumerate} 
     \item Sign up form screen \\ \\ \\
@@ -421,26 +453,29 @@ This is the membership form page. Ms.TROMM receives three types of information (
 
 \break
     
-          \begin{enumerate} 
-          \item Phrases when invalid \\ \\
-            \centerline{\includegraphics[scale=0.28]{assets/회원가입3.jpg}}
+        \begin{enumerate} 
+          \item Phrases when invalid \\ 
           \begin{enumerate}
+          \centerline{\includegraphics[scale=0.28]{assets/회원가입3.jpg}}
           \item The name is not valid. Please input it again.
           \item This is an invalid email format. Please input it again.
           \item This is an invalid password format. Please input it again.
           \item The password does not match. Please input it again.
         \end{enumerate}
     \item[-] \\ If an input value that matches the rule is entered, the field is processed in green, and the phrase "valid value" is exposed at the bottom. \\
-    \item Phrases when valid \\ \\ \\
-    \centerline{\includegraphics[scale=0.28]{assets/회원가입2.jpg}}
+    \item Phrases when valid \\ 
     \begin{enumerate}
-\item This is a valid name.
-\item This is a valid email format.
-\item This is a valid password format.
-\item The password matches.
+    \centerline{\includegraphics[scale=0.28]{assets/회원가입2.jpg}}
+    \item This is a valid name.
+    \item This is a valid email format.
+    \item This is a valid password format.
+    \item The password matches. \\
     \end{enumerate}
         \end{enumerate}
           \end{itemize}
+          
+\break          
+
     \item Pop-up \\\\
     \centerline{\includegraphics[scale=0.32]{assets/회원가입4.jpg}}
     \begin{itemize}
@@ -468,24 +503,26 @@ This is the membership form page. Ms.TROMM receives three types of information (
 
     \end{itemize} 
         \item Survey page \\ \\ \\
-        \leftline{\includegraphics[scale=0.15]{assets/설문지2.jpg}
-                   \includegraphics[scale=0.15]{assets/설문지3.jpg}
-                   \includegraphics[scale=0.15]{assets/설문지4.jpg}
-                    \includegraphics[scale=0.15]{assets/설문지5.jpg}}
+        \leftline{\includegraphics[scale=0.24]{assets/설문지2.jpg}
+                   \includegraphics[scale=0.24]{assets/설문지3.jpg}}
+        \\ \\
+        \leftline{\includegraphics[scale=0.24]{assets/설문지4.jpg}
+                    \includegraphics[scale=0.24]{assets/설문지5.jpg}}
     \begin{itemize}
-        \item[] \\ \\ This is a survey to increase the recommended accuracy of Ms. TROMM. The survey consists of questions about three elements (a style you usually wear often, a favorite color, and a favorite scent). In the case of frequently worn styles, different questions are provided depending on the gender entered when signing up as a member.\\
-        \break
+        \item[] This is a survey to increase the recommended accuracy of Ms. TROMM. The survey consists of questions about three elements (a style you usually wear often, a favorite color, and a favorite scent). In the case of frequently worn styles, different questions are provided depending on the gender entered when signing up as a member.\\ \\ \\ \\ \\ \\ \\ \\ \\
         \end{itemize} 
-        \item Pop-up\\ \\
-            \centerline{\includegraphics[scale=0.32]{assets/설문지6.jpg}}
+\break
+    \item Pop-up\\ \\
     \begin{itemize}
-        \item[]  This is a pop-up that is exposed at the bottom of the questionnaire when you try to leave the page. "You must complete the survey to move!" will be displayed. When you click the gray area, 'x button', or 'OK button', the pop-up will end and the survey page will be exposed again.\\ \\ \\
+    \centerline{\includegraphics[scale=0.32]{assets/설문지6.jpg}}
+        \item[]  This is a pop-up that is exposed at the bottom of the questionnaire when you try to leave the page. "You must complete the survey to move!" will be displayed. When you click the gray area, 'x button', or 'OK button', the pop-up will end and the survey page will be exposed again.\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ 
         \end{itemize} 
+\break        
 
-    \item Completed page \\ \\ \\
-    \centerline{\includegraphics[scale=0.32]{assets/설문지7.jpg}}
+    \item Completed page \\ \\
     \begin{itemize}
-        \item[] This page appears when you complete the survey. The "Move to Home" button is exposed at the bottom. When clicking the button, go to Home.\\ \\ \\ \\
+    \centerline{\includegraphics[scale=0.32]{assets/설문지7.jpg}}
+        \item[] This page appears when you complete the survey. The "Move to Home" button is exposed at the bottom. When clicking the button, go to Home.\\ \\ \\ 
         \end{itemize} 
 \end{enumerate}
 \item Home(Main page)\\ \\
@@ -493,68 +530,117 @@ This is the membership form page. Ms.TROMM receives three types of information (
 \begin{itemize}
     \item[] Home shows basic functions in the app at once.\\\\
 \end{itemize}
+
  \begin{enumerate}
  \centerline{\includegraphics[scale=1]{assets/일반 위젯.jpg}}
  \item[-]Indicate today's date and current weather. \\\\
- \leftline{\includegraphics[scale=1]{assets/오늘의 추천 위젯.jpg}}
+ \end{enumerate}
+ 
+ \begin{enumerate}
+ \centerline{\includegraphics[scale=1]{assets/오늘의 추천 위젯.jpg}}
  \item[-] Today's recommendation item is provided in the form of a preview of the recommendation that the user has set as the default recommendation.\\\\
  \item[-] Styler control items allow you to check the connection and connection status with the Styler/Smart Mirror and support the pause/react button when the Styler is operated. It also displays the remaining time until the styler operation stage and shutdown.\\\\
- \leftline{\includegraphics[scale=0.40]{assets/스타일러 제어 위젯.jpg}}
- \break
- \item[-] \\ \\ If the styler/smart mirror is not connected, when clicked, it will be changed to a message indicating that the connection is underway and the color will be changed.\\ \\ \\ \\ \\
- \item[-] If the connection to the styler/smart mirror fails, it will be changed to a comment indicating the connection failure and the color will be changed. \\ \\
- \leftline{\includegraphics[scale=0.75]{assets/현재 우리집 위젯.jpg}}
- \item[-] \\ \\ Current status of our home menu displays the temperature and humidity of the house, and buttons are located to turn on indoor dehumidification and automatic drying functions.\\ \\
  \end{enumerate}
- \item Bottom Nav \\ \\ \\ \\
- \centerline{\includegraphics[scale=0.5]{assets/하단 nav.jpg}}
+ 
+ \begin{enumerate} 
+ \centerline{\includegraphics[scale=0.4]{assets/스타일러 제어 위젯.jpg}}
+ \item[-] If the styler/smart mirror is not connected, when clicked, it will be changed to a message indicating that the connection is underway and the color will be changed.\\ \\
+\end{enumerate}
+
+\begin{enumerate}
+ \item[-] If the connection to the styler/smart mirror fails, it will be changed to a comment indicating the connection failure and the color will be changed. \\ \\
+\end{enumerate}
+
+\begin{enumerate} 
+ \centerline{\includegraphics[scale=0.75]{assets/현재 우리집 위젯.jpg}}
+ \item[-] Current status of our home menu displays the temperature and humidity of the house, and buttons are located to turn on indoor dehumidification and automatic drying functions.\\ \\
+\end{enumerate}
+
+ \item Bottom Nav \\ 
+ \centerline{\includegraphics[scale=0.45]{assets/하단 nav.jpg}}
  \break
  \begin{itemize}
-    \item[] This is the bottom nav in the app. It consists of home, recommendation, styler, and whole, and when clicked, the picture is activated and goes to the page.
+    \item[] This is the bottom nav in the app. It consists of home, recommendation, styler, and whole, and when clicked, the picture is activated and goes to the page.\\ 
 \end{itemize}
+
+\item How to implement \\ \\
+    We use Weather API function. \\ \\
+    1. Go to https://home.openweathermap.org/api\_keys \\ \\
+    \centerline{\includegraphics[scale=0.25]{assets/widget1.png}}
+    2. Create API key.\\ \\
+    \centerline{\includegraphics[scale=0.45]{assets/widget2.png}}
+
 \end{enumerate}
+
 
 \subsection{Pop-up} \\ \\
 \begin{itemize}
-    \item[] Notifications occurring in the app occur as pop-ups and can be found in the notification menu. You can enter the notification menu at the top of the home screen.\\ \\ \\ \\ \\
+    \item[] Notifications occurring in the app occur as pop-ups and can be found in the notification menu. You can enter the notification menu at the top of the home screen.\\ \\ \\
 \end{itemize}
-
-\break
 
 \begin{enumerate}
-    \item Today's recommendation notification \\
-    \centerline{\includegraphics[scale=0.18]{assets/오늘의 추천 팝업1.jpg}
-    \includegraphics[scale=0.18]{assets/오늘의 추천 팝업2.jpg}
-    \includegraphics[scale=0.18]{assets/오늘의 추천 팝업3.jpg}}
-    \begin{itemize}
-    \item[] Today's recommendation is caused by a pop-up notification. After checking the notification, a notification occurs to select whether the recommendation was helpful, and the recommendation termination popup is exposed when responding. Data from the notification asking for recommendation help is recorded on the server, and more personalized recommendations are made using it.\\ 
-\end{itemize}
-\item Control recommendation notification \\
-\centerline{\includegraphics[scale=0.18]{assets/제어추천 팝업1.jpg}
-            \includegraphics[scale=0.18]{assets/제어추천 팝업2.jpg}}
-\break
-    \begin{itemize}
-    \item[] This is a notification that occurs when there is a lack of water in the styler or when water needs to be discarded. \\
-\end{itemize}
-\centerline{\includegraphics[scale=0.18]{assets/제어추천 팝업3.jpg}
-            \includegraphics[scale=0.18]{assets/제어추천 팝업4.jpg}}
-\break
-    \begin{itemize}
-    \item[] This is a notification of indoor dehumidification and automatic drying control that occur when indoor humidity exceeds 40. \\ \\
-\end{itemize}
-     \item Weather notification\\ \\
-     \centerline{\includegraphics[scale=0.30]{assets/날씨 추천 팝업.jpg}}
-    \begin{itemize}
-    \item[] \\ \\ \\ \\A pop-up notification occurs based on the weather. For example, if there's a rain forecast, you'll be notified to bring an umbrella..\\
-\end{itemize}
-     \item Schedule notification \\ \\
-     \centerline{\includegraphics[scale=0.30]{assets/일정 추천 팝업.jpg}}
-    \begin{itemize}
-    \item[] \\ \\ \\ \\ A pop-up notification occurs based on the schedule. For example, if you have an interview, you will be notified of the interview cheering comment\\
-\end{itemize}
+    \item Today's recommendation notification \\ \\
+        \centerline{\includegraphics[scale=0.24]{assets/오늘의 추천 팝업1.jpg}
+        \includegraphics[scale=0.24]{assets/오늘의 추천 팝업2.jpg}} \\ \\
+        \centerline{\includegraphics[scale=0.24]{assets/오늘의 추천 팝업3.jpg}}
+        \begin{itemize}
+            \item[] Today's recommendation is caused by a pop-up notification. After checking the notification, a notification occurs to select whether the recommendation was helpful, and the recommendation termination popup is exposed when responding. Data from the notification asking for recommendation help is recorded on the server, and more personalized recommendations are made using it.\\ 
+        \end{itemize}
+        
+    \break
+        
+    \item Control recommendation notification \\ \\
+        \begin{itemize}
+        \centerline{\includegraphics[scale=0.24]{assets/제어추천 팝업1.jpg}
+                    \includegraphics[scale=0.24]{assets/제어추천 팝업2.jpg}}
+            \item[] This is a notification that occurs when there is a lack of water in the styler or when water needs to be discarded. \\
+        \end{itemize}
+        \centerline{\includegraphics[scale=0.24]{assets/제어추천 팝업3.jpg}
+                    \includegraphics[scale=0.24]{assets/제어추천 팝업4.jpg}}
+        \begin{itemize}
+            \item[] This is a notification of indoor dehumidification and automatic drying control that occur when indoor humidity exceeds 40. \\ \\
+        \end{itemize}
+    
+   \break 
+    
+    \item Weather notification\\ \\
+        \centerline{\includegraphics[scale=0.32]{assets/날씨 추천 팝업.jpg}}
+        \begin{itemize}
+            \item[] \\ \\ \\ \\A pop-up notification occurs based on the weather. For example, if there's a rain forecast, you'll be notified to bring an umbrella..\\
+        \end{itemize}
+    \item Schedule reminding \\ \\
+        \centerline{\includegraphics[scale=0.32]{assets/일정 추천 팝업.jpg}}
+        \begin{itemize}
+            \item[] \\ \\ \\ \\ A pop-up notification occurs based on the schedule. For example, if you have an interview, you will be notified of the interview cheering comment\\
+        \end{itemize}
+        
+    \break
+    
+    \item Learning notification \\ \\
+        \centerline{\includegraphics[scale=0.32]{assets/학습 팝업1.png}}
+        \begin{itemize}
+            \item[] A pop-up is displayed to provide better recommendations through the user's response. For example, Ms. TROMM asks which of the six types of clothes fits the user's schedule a few days ago.\\ \\ \\ \\ 
+        \end{itemize}
+        
+        \begin{itemize}
+        \centerline{\includegraphics[scale=0.24]{assets/학습 팝업2.png}
+                    \includegraphics[scale=0.24]{assets/학습 팝업3.png}}
+            \item[] \\ \\ When selected, it is displayed in blue.\\ \\  \\ \\  \\ \\  \\ \\ 
+            \centerline{\includegraphics[scale=0.32]{assets/학습 팝업4.png}}
+            \item[] \\ \\ When the user's answer is entered, a pop-up with thank you is displayed.\\ \\
+        \end{itemize}
+
+    \item How to implement \\ \\
+        We use Google API function. \\ \\
+        1. Go to https://console.cloud.google.com/apis/ \\ \\
+        \centerline{\includegraphics[scale=0.3]{assets/reminder.png}}
+        2. Create API key.\\ \\
 \end{enumerate}
 
-\subsection{Notification} \\ \\
+
+\break
+
+\subsection{Notification}
 \begin{itemize}
     \item[] This is a menu in which the pop-up notification list that has occurred is recorded.\\ \\ \\
 \end{itemize}
@@ -565,9 +651,9 @@ This is the membership form page. Ms.TROMM receives three types of information (
  \item[-] This is a screen that is exposed when there is no notification history after replacing the push alarm setting to ON.\\\\\\\\
  \centerline{\includegraphics[scale=0.32]{assets/알림3.jpg}}
  \item[-] \\\\ This is a screen that is exposed when there is a notification list.\\\\\\\\\\\\
-\centerline{\includegraphics[scale=0.25]{assets/알림4.jpg}
-            \includegraphics[scale=0.25]{assets/알림5.jpg}}
- \item[-] \\When you click on the notification list, the body containing the notification is exposed.\\\\\\\\\\\
+\centerline{\includegraphics[scale=0.24]{assets/알림4.jpg}
+            \includegraphics[scale=0.24]{assets/알림5.jpg}}
+ \item[-] \\When you click on the notification list, the body containing the notification is displayed.\\\\\\\\\\\
  \end{enumerate}
 
 \subsection{Recommendation}
@@ -578,47 +664,61 @@ This is the membership form page. Ms.TROMM receives three types of information (
     \item Button description(first time to entry) \\ \\
     \centerline{\includegraphics[scale=0.32]{assets/추천1.jpg}}
         \begin{itemize}
-    \item[] When entering the recommendation menu for the first time, a page informing you of the basic functions of the buttons in the recommendation menu is exposed. It ends when you click on the gray area. \\
+    \item[] When entering the recommendation menu for the first time, a page informing you of the basic functions of the buttons in the recommendation menu is exposed. It ends when you click on the gray area. \\\\\\\\\\\\\\\\\\\\\\\\\\
 \end{itemize}
-     \item Today's Recommendation \\ \\
-     \centerline{\includegraphics[scale=0.32]{assets/추천2.jpg}}
-    \begin{itemize}
-    \item[] \\ \\ \\ \\ This menu exposes today's recommendations using calendars and weather APIs. Comments and recommendations suitable for the date will be exposed.\\
-\end{itemize}
-       \item Control Recommendation \\ \\ \\
+
+\break
+
+    \item Today's Recommendation \\ \\
+        \centerline{\includegraphics[scale=0.32]{assets/추천2.jpg}}
+        \begin{itemize}
+            \item[] \\ \\ \\ \\ This menu exposes today's recommendations using calendars and weather APIs. Comments and recommendations suitable for the date will be exposed.\\
+        \end{itemize}
+    \item Control Recommendation \\ \\ \\
        \centerline{\includegraphics[scale=0.32]{assets/추천3.jpg}}
-       \break
-           \begin{itemize}
-    \item[] It is a menu that provides recommendations related to the clothing and home environment in the styler.\\\\\\
-\end{itemize}
-     \item Pop-up related to fragrance use \\ \\
-     \centerline{\includegraphics[scale=0.25]{assets/추천4.jpg}
-                \includegraphics[scale=0.25]{assets/추천5.jpg}}
+        \begin{itemize}
+            \item[] It is a menu that provides recommendations related to the clothing and home environment in the styler.\\\\\\
+        \end{itemize}
+    
+    \break
+    
+    \item Pop-up related to applying scent \\ \\
+        \centerline{\includegraphics[scale=0.24]{assets/추천4.jpg}
+                    \includegraphics[scale=0.24]{assets/추천5.jpg}}
     \begin{itemize}
-    \item[] \\ \\ \\ \\ This is a pop-up that is exposed when you click the fragrance recommendation part. Ask questions about applying the Styler Introductory Application, and forward the sheet activation command to the Styler when the user wants to apply the fragrance.\\
-\end{itemize}
+        \item[] \\ \\ \\ \\ This is a pop-up that is exposed when you click the scent recommendation part. Ask questions about applying the Styler Introductory Application, and forward the sheet activation command to the Styler when the user wants to apply the scent.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    \end{itemize}
 \end{enumerate}
+
+\break
 
 \subsection{Styler}  \\ 
 \centerline{\includegraphics[scale=0.32]{assets/스타일러4.jpg}}
-This is a menu where you can control the styler. Control buttons on the styler are exposed.
- \begin{enumerate}
-\centerline{\includegraphics[scale=0.32]{assets/스타일러1.jpg}}
- \item[-]This is a page that appears when not connected to the styler. \\\\
-\centerline{\includegraphics[scale=0.5]{assets/제어 버튼1.jpg}} \\ \\
-\centerline{\includegraphics[scale=0.5]{assets/제어 버튼2.jpg}} \\ \\
-\centerline{\includegraphics[scale=0.5]{assets/제어 버튼3.jpg}} \\ \\
- \item[-]It's related to the operation of the styler. There are Styler power-on, power-off, start operation, stop operation buttons, and reservation buttons. If the styler is running, it displays which function is running. \\\\
-  \centerline{\includegraphics[scale=0.5]{assets/스타일러 버튼.jpg}}
- \item[-]It's a menu that can be operated by the styler. It supports a total of six functional operations \\\\
-\centerline{\includegraphics[scale=0.3]{assets/스타일링 선택.jpg}
-            \includegraphics[scale=0.3]{assets/섬세건조 선택.jpg}} \\ \\
-\centerline{\includegraphics[scale=0.3]{assets/고급의류 선택.jpg}
-            \includegraphics[scale=0.3]{assets/스팀살균 선택.jpg}} \\ \\
- \item[-]Details of the course will be exposed when each button is clicked. \\\\
-   \centerline{\includegraphics[scale=0.32]{assets/스타일러7.jpg}}
- \item[-]This is a pop-up that is exposed when another styler menu is pressed while the styler is running. \\\\
- \end{enumerate}
+This is a menu where you can control the styler. Control buttons on the styler are displayed. \\ \\ \\ \\
+\begin{enumerate}
+    \centerline{\includegraphics[scale=0.32]{assets/스타일러1.jpg}}
+    \item[-]This is a page that appears when not connected to the styler.\\ \\ \\ \\
+\end{enumerate}
+\break
+\begin{enumerate}    
+    \centerline{\includegraphics[scale=0.5]{assets/제어 버튼1.jpg}} \\ \\
+    \centerline{\includegraphics[scale=0.5]{assets/제어 버튼2.jpg}} \\ \\
+    \centerline{\includegraphics[scale=0.5]{assets/제어 버튼3.jpg}} \\ \\
+    \item[-]It's related to the operation of the styler. There are Styler power-on, power-off, start operation, stop operation buttons, and reservation buttons. If the styler is running, it displays which function is running. \\\\
+\end{enumerate}
+\begin{enumerate} 
+    \centerline{\includegraphics[scale=0.5]{assets/스타일러 버튼.jpg}}
+    \item[-]It's a menu that can be operated by the styler. It supports a total of six functional operations \\\\\\\\\\\\
+    \leftline{\includegraphics[scale=0.3]{assets/스타일링 선택.jpg}
+                \includegraphics[scale=0.3]{assets/섬세건조 선택.jpg}} \\ \\
+    \leftline{\includegraphics[scale=0.3]{assets/고급의류 선택.jpg}
+                \includegraphics[scale=0.3]{assets/스팀살균 선택.jpg}} \\ \\
+    \item[-]Details of the course will be exposed when each button is clicked. \\\\
+    \centerline{\includegraphics[scale=0.32]{assets/스타일러7.jpg}}
+    \item[-]This is a pop-up that is exposed when another styler menu is pressed while the styler is running. \\\\
+\end{enumerate}
+
+\break
  
 \subsection{My Closet}  \\
 The button to enter my closet menu continues to be exposed to a floating action button within the app.
@@ -627,8 +727,11 @@ The button to enter my closet menu continues to be exposed to a floating action 
  \begin{enumerate}
  \centerline{\includegraphics[scale=0.32]{assets/내 옷장1.jpg}}
  \item[-]The registration date of the clothes and the date you put them in the styler most recently are displayed. The clothes bookmarked at the top are currently in the styler. \\\\
- \item[-]Clothes that need to be turned around in the styler will be guided above. We need a styler in order of importance. - How about a styler?This outfit is okay. \\\\
- \centerline{\includegraphics[scale=0.32]{assets/내 옷장2.jpg}}
+ \item[-]Clothes that need to be turned around in the styler will be guided above. We need a styler in order of importance. - How about a styler? This outfit is okay. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ 
+ \break
+ 
+ \centerline{\includegraphics[scale=0.32]{assets/내 옷장2.jpg}} 
  \item[-] When you click on the bottom of the list, detailed information about the clothes appears. The information that appears is the registration date, the last styler working day, and the contents that were registered when registering clothes.\\\\
  \end{enumerate}
  
@@ -636,33 +739,49 @@ The button to enter my closet menu continues to be exposed to a floating action 
  \begin{enumerate}
     \centerline{\includegraphics[scale=0.24]{assets/새 옷 등록하기1.jpg}
     \includegraphics[scale=0.24]{assets/새 옷 등록하기2.jpg}}
- \item[-]It's a menu to register new clothes. At first, the part where you put the picture of the clothes and the name input field are exposed. \\\\
- \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기3.png}}
- \item[-]Next, fields where you can enter colors, styling courses, high-end drying courses, and sterilization are exposed. \\\\
-  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기4.png}}
- \item[-]This is a screen where a guide phrase for designating no category is exposed as a pop-up. \\\\
-  \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기5.png}}
- \item[-]This is a pop-up announcing the completion of the procedure for registering new clothes. \\\\
- \end{enumerate}
+    \item[-]It's a menu to register new clothes. At first, the part where the user put the picture of the clothes and the name input field are displayed.
+\end{enumerate}
  
- \item Register New clothes\\ \\
- \begin{enumerate}
-    \centerline{\includegraphics[scale=0.24]{assets/새 옷 등록하기1.jpg}
-    \includegraphics[scale=0.24]{assets/새 옷 등록하기2.jpg}}
-    \item[-]It's a menu to register new clothes. At first, the part where you put the picture of the clothes and the name input field are exposed. \\\\
-    \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기3.png}}
-    \item[-]Next, fields where you can enter colors, styling courses, high-end drying courses, and sterilization are exposed. \\\\
-    \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기4.png}}
-    \item[-]This is a screen where a guide phrase for designating no category is exposed as a pop-up. \\\\
-    \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기5.png}}
-    \item[-]This is a pop-up announcing the completion of the procedure for registering new clothes. \\\\
+ \break
+ 
+\begin{enumerate} 
+ \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기3.png}}
+ \item[-]Next, fields where the user can enter colors, styling courses, high-end drying courses, and sterilization are displayed. \\\\
+\end{enumerate}
+
+\begin{enumerate}
+ \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기4.png}}
+ \item[-]This is a screen where a guide phrase for designating no category is exposed as a pop-up. \\\\
+\end{enumerate}
+ 
+\begin{enumerate} 
+ \centerline{\includegraphics[scale=0.32]{assets/새 옷 등록하기5.png}}
+ \item[-]This is a pop-up announcing the completion of the procedure for registering new clothes. \\\\
+\end{enumerate}
+ 
+ \item Change the content\\ \\
+    \begin{enumerate}
+        \centerline{\includegraphics[scale=0.32]{assets/내용 변경1.png}}
+        \item[-]It is a menu that changes what you entered when registering clothes. At first, the part where you put the picture of the clothes and the name input field are displayed. \\\\
+    \end{enumerate}
+        \begin{enumerate}    
+        \centerline{\includegraphics[scale=0.32]{assets/내용 변경2.png}}
+        \item[-]Next, fields where the user can enter colors, styling courses, high-end drying courses, and sterilization are displayed. \\\\
+    \end{enumerate}
+    \begin{enumerate}
+        \centerline{\includegraphics[scale=0.32]{assets/내용 변경3.png}}
+        \item[-]This is a screen where a guide phrase for designating no category is displayed as a pop-up. \\\\
+    \end{enumerate}
+        \begin{enumerate}
+        \centerline{\includegraphics[scale=0.32]{assets/내용 변경4.png}}
+        \item[-]This is a pop-up announcing the completion of the procedure for changing the content.\\ \\
     \end{enumerate}
 \end{enumerate}
 
 \subsection {All} \\
 This is a menu where you can check the general information of the app. You can check the subscription information and version information terms and conditions, and there is a menu that allows you to change the default settings in the app.
 \begin{enumerate}
-    \item Login form screen \\ \\
+    \item Menu \\ \\
     \centerline{\includegraphics[scale=0.32]{assets/전체.jpg}}
     \begin{itemize}
     \item[] Version information is displayed in this menu page. \\
@@ -670,27 +789,27 @@ This is a menu where you can check the general information of the app. You can c
     \item My information \\\\
     \centerline{\includegraphics[scale=0.32]{assets/내 정보1.jpg}}
     \begin{itemize}
-    \item[] This is a menu where you can check the information you entered when signing up. If you want to change the information, click the Change button at the bottom to see the Change screen. \\ \\
+    \item[-] This is a menu where you can check the information you entered when signing up. If you want to change the information, click the Change button at the bottom to see the Change screen. \\ \\
     \end{itemize}
     \centerline{\includegraphics[scale=0.32]{assets/내 정보2.jpg}}
     \begin{itemize}
-    \item[] After pressing Change, the screen is displayed. You can modify the information you entered when signing up. \\ \\
+    \item[-] After pressing Change, the screen is displayed. You can modify the information you entered when signing up. \\ \\ \\
     \end{itemize}
     
-    \break
-    
-    \item Terms and Conditions \\ \\ \\
+    \item Terms and Conditions \\ \\
     \centerline{\includegraphics[scale=0.32]{assets/개인정보약관.jpg}}
     \begin{itemize}
-    \item[]You can check the terms and conditions of using personal information. \\ \\ 
+    \item[]You can check the terms and conditions of using personal information. \\
     \end{itemize}
 \end{enumerate}
 
 \section{ARCHITECTURE DESIGN AND IMPLEMENTATION}
 
 \subsection{Overall Architecture}
-\centerline{\includegraphics[scale=0.15]{assets/Overall architecture.jpg}}
-\\ \\ \\ We have three parts consisting of our application ‘Ms. TROMM’. First part is ‘Flutter’ which is for our frontend. It mainly reacts with the client(user) part. This will help us our overall application containing several functions and designs. For our backend which mainly reacts with the server, we use Flask and SQL Alchemy. Flask adopted it because it can build and develop back-and-server light and fast. In addition, through SQL Alchemy, the database can be object-oriented and SQL can be handled with Python. Last part is MySQL and Heroku which is for server. MySQL is used to remotely manage databases, and MySQL is connected to Heroku Service Part, a server that provides free hosting up to certain traffic.\\ \\
+\centerline{\includegraphics[scale=0.12]{assets/Overall architecture.jpg}}
+ We have three parts consisting of our application ‘Ms. TROMM’. First part is ‘Flutter’ which is for our frontend. It mainly reacts with the client(user) part. This will help us our overall application containing several functions and designs. For our backend which mainly reacts with the server, we use Flask and SQL Alchemy. Flask adopted it because it can build and develop back-and-server light and fast. In addition, through SQL Alchemy, the database can be object-oriented and SQL can be handled with Python. Last part is MySQL and Heroku which is for server. MySQL is used to remotely manage databases, and MySQL is connected to Heroku Service Part, a server that provides free hosting up to certain traffic. \\
+
+\break
 
 \subsection{Directory organization}
 This is the table which shows directory, file name and module name.\\
@@ -705,14 +824,14 @@ This is the table which shows directory, file name and module name.\\
     & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter) \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\.firebase/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\hosting.YnVpbGRcd2Vi\\.cache\\\\\\\end{tabular} 
     & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\android/app/src/\\main/res/drawable\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\background.png\\\\launch_background.xml\\\\\\\end{tabular} 
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\android/app/src/\\main/res/drawable/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\background.png\\\\launch_background.xml\\\\\\\end{tabular} 
     & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\android/app/src/\\main/res/values\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\styles.xml\\\\\\\\\\\end{tabular} 
     & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\db/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\schema.sql\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\android/app/src/\\main/res/values\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\styles.xml\\\\\\\\\\\end{tabular} 
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\android/app/src/\\main/res/values/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\styles.xml\\\\\\\\\\\end{tabular} 
     & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\AppDelegate.swift\\\\info.plist\\\\Runner-Bridging-Header.h\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner/\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\AppDelegate.swift\\\\info.plist\\\\Runner-Bridging-Header.h\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\end{tabular} \\ \hline
     \end{tabular}
 \end{table}
 
@@ -722,7 +841,7 @@ This is the table which shows directory, file name and module name.\\
     \hline 
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner\\Assets.xcassets/\\LaunchBackground\\.imageset/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Contents.json\\\\background.png\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner\\Assets.xcassets/\\LaunchImage\\.imageset/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Contents.json\\\\LaunchImage.png\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner\\Base.lproj/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\LaunchScreen.storyboard\\\\Main.storyboard\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\ios/Runner/\\Base.lproj/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\LaunchScreen.storyboard\\\\Main.storyboard\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\main.dart\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/local\_db/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\database\_example.dart\\\\shared\_pref.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/models/\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\album.dart\\\\connectable.dart\\\\smart\_mirror.dart\\\\styler.dart\\\\user.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
@@ -731,18 +850,18 @@ This is the table which shows directory, file name and module name.\\
     \end{tabular}
 \end{table}
 
-\begin{table} [t]
+\begin{table} [p]
     \centering
     \begin{tabular}{l|l|l} \hline
-    \begin{tabular}[c]{@{}l@{}}\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\moisture\_box.dart\\\\recommendation\_box\\.dart\\\\styler\_control\_box\\.dart\\\\weather_box.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\moisture\_box.dart\\\\recommendation\_box\\.dart\\\\styler\_control\_box\\.dart\\\\weather\_box.dart\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/settings/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\settings.dart\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/styler/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\styler.dart\\\\styler2.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/survey/\\\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\survey\_done.dart\\\\survey\_main.dart\\\\survey\_step\_1.dart\\\\survey\_step\_2.dart\\\\survey\_step\_3.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\lib/ui/widgets/\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\alert\_dialog.dart\\\\logo.dart\\\\spacer.dart\\\\tromm\_button.dart\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\web/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\index.html\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\web/splash\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\style.css\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\.gitignore\\\\requirements.txt\\\\README.md\\\\wsgi.py\\\\\end{tabular} 
-    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy)\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Frontend/\\web/splash/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\style.css\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Frontend (Flutter)\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\.gitignore\\\\requirements.txt\\\\\\README.md\\\\wsgi.py\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy)\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
     \end{tabular}
 \end{table}
 
@@ -751,13 +870,13 @@ This is the table which shows directory, file name and module name.\\
     \begin{tabular}{l|l|l}
     \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr/\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Swg.py\\\\clothe.csv\\\\dataset.csv\\\\\end{tabular} 
-    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy)\\\\\\\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr/\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Swg.py\\\\clothe.csv\\\\dataset.csv\\\\main.py\\\\swagger.yml\\\\\end{tabular} 
-    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy)\\\\\\\end{tabular} \\ \hline 
+    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask\\+SQL Alchemy)\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr/\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Swg.py\\\\clothe.csv\\\\dataset.csv\\\\main.py\\\\swagger.yml\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask\\+SQL Alchemy)\\\\\\\\\\\\\\\end{tabular} \\ \hline 
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr/models/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\\_init\_.py\\\\clothes.py\\\\clothes\_combination.py\\\\control.py\\\\mirror.py\\\\recommendation.py\\\\scent.py\\\\schedule.py\\\\styler.py\\\\styler\_alert.py\\\\user.py\\\\user\_preference.py\\\\\end{tabular} 
-    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask+SQL Alchemy) \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Procfile\\\\install.md\\\\\end{tabular} 
-    & \begin{tabular}[c]{@{}l@{}}\\DB\\(MySQL+Heroku)\\\\\end{tabular} \\ \hline
+    & \begin{tabular}[c]{@{}l@{}}\\Backend\\(Flask\\+SQL Alchemy) \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\Procfile\\\\install.md\\\\\end{tabular} 
+    & \begin{tabular}[c]{@{}l@{}}\\DB\\(MySQL+Heroku)\\\\\\\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}\\Ms-TROMM/\\Ms.TROMM\_Backend/\\flaskr\\\\\end{tabular} & \begin{tabular}[c]{@{}l@{}}\\settings.py\\\\\\\\\end{tabular} 
     & \begin{tabular}[c]{@{}l@{}}\\DB\\(MySQL+Heroku)\\\\\\\end{tabular} \\ \hline
     
@@ -769,9 +888,9 @@ This is the table which shows directory, file name and module name.\\
     \label{table}
 \end{table}
 
-\textcolor[rgb]{1,1,1}{(This is blank)}\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\textcolor[rgb]{1,1,1}{(This is blank)}\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-\subsection{Part 1: Flutter (Frontend)}
+\subsection{Module 1: Flutter (Frontend)}
 \begin{enumerate}
     \item Purpose\\
     To develop Ms.TROMM, a cross-platform that can be developed in both Android and iOS environments, we used Flutter, a web/app cross-platform framework developed by Google based on the Dart language. In the case of Ms.TROMM developed with Flutter, it can be used in both web and app environments. The advantage of developing Ms.TROMM is that it can be developed in a familiar environment among the existing iOS or Android development environments, such as Android Studio or Xcode. In the case of Ms.TROMM, it is an artificial intelligence software that provides better recommendations while accumulating data through learning, so it is important to provide an environment that can be used by more users. Therefore, Flutter was adopted as a front-end development environment to provide a better experience for both developers and users. \\ \\
@@ -785,7 +904,7 @@ This is the table which shows directory, file name and module name.\\
     Flutter is a web/app cross-platform framework developed by Google based on the Dart language. When developing, it is a burden for developers to create a separate native app that runs in both iOS and Android environments. However, this problem can be solved by using a flutter. In addition, the community is active because it is created and supported by Google, and unlike other frameworks and Android studios, modules or libraries must be imported, it is developed using various functions provided on the basis, so the speed of development is relatively short. So, Ms.TROMM had to be developed in an agile development environment, so it was developed by adopting Flutter and focusing on selection. \\ \\
 \end{enumerate}
 
-\subsection{Part 2: Flask+ SQLAlchemy (Backend)}
+\subsection{Module 2: Flask+ SQLAlchemy (Backend)}
 \begin{enumerate}
     \item Purpose\\
     It was decided to use Python-based Flask to build Ms.TROMM's backend server. In the case of Flask, since it is possible to build and develop backend servers light and fast, it was judged to be the most suitable framework due to the nature of the development that requires delivering Restful API to the frontend. Due to the nature of the agile development environment, choosing a secure framework certified by many developers was an important issue for us, and when blocked by various errors and bugs, it had to be easy to find a way to solve it. Therefore, flask served our purpose as a stable framework loved by many developers as a web framework. In addition, through SqlAlchemy (ORM), the database can be object-oriented and SQL can be handled with Python.\\ \\
@@ -802,7 +921,7 @@ This is the table which shows directory, file name and module name.\\
     In the case of Flask, since it is Python-based, object-oriented programming and excellent open-source modules, which are advantages of Python, can be used. There is a lot of work to process various and large amounts of data with the back-and-framework, Ms.In the case of TROMM, since it is artificial intelligence-based software, it is very helpful to have many modules in various fields. In addition, the community has the advantage of being solid as it is a programming language used by experts in various fields. In the case of the environment developing Ms.TROMM, Agile development was not long, and the development of Front and Back had to communicate closely. In addition, there were many processes of updating information in the database and importing updated information in real-time, and the main function was to check it in real-time and inform the most optimal recommendation through push notification. In addition, the linkage (connection status) and control between LG Styler and LG Smart Mirror were also considered, so many variables were often considered. In this volatile environment, front and back-and-developers were able to communicate with Restful API and work simply by checking Restful API through Swagger Tool. \\ \\
 \end{enumerate}
 
-\subsection{Part3: MySQL + Heroku (Database)}
+\subsection{Module 3: MySQL + Heroku (Database)}
 \begin{enumerate}
     \item Purpose \\
     In the case of Ms.TROMM, it was difficult to utilize a database or server on a local basis because it had to receive information in real-time, update, and learn. Therefore, MySQL, which can remotely manage the database, is used, and MySQL is connected to the Heroku service part, a server that provides free hosting up to certain traffic so that data in the database can be read and updated in real-time. \\ \\
@@ -821,24 +940,25 @@ This is the table which shows directory, file name and module name.\\
     When we select a database, which service to choose between SQL and NoSQL was an important issue. Due to the nature of Ms.TROMM's service, there is no service to be provided other than the existing database service, and SQL was adopted because it was judged that the service could be provided to users only by queries of the existing SQL service. In addition, it was decided to use MySQL, which was judged to be the most stable and popular among several SQLs. In addition, we judged that MySQL is a good choice because it is one of the SQLs that can easily and visually handle databases in conjunction with JetBrain's Datagrip. Several server hosting services were considered as servers that help manage these databases in real-time, but Heroku's clearDB service, which can be used free of charge, was linked to MySQL to conduct prototype tests using Heroku. \\ \\
 \end{enumerate}
 
+\break
+
 \section{USE CASES}
 
 \subsection{Installation}
 When the user goes to ‘App Store' or ‘Google Play Store' and searches the words ‘Styler’, ‘Smart closet’, or ‘home application control’, our application will be recommended. When the user downloads our application, ‘Ms. TROMM’ will becreated on their mobile phone.\\ \\
 
-\break
 
 \subsection{Turn on the application}
 \centerline{\includegraphics[scale=0.5]{assets/flow_1.png}}
-When the user clicks the ‘Ms. TROMM’ application icon, the splash page of our application will be shown. If there is no history of logging in to our application on the user's mobile phone, the onboarding page will be displayed. The user can read the description of why the main functions on the onboarding screen. At the end of the onboarding screen, the user can go to the login or membership screen. If the user has a history of logging in to our application from the user's mobile phone, the login screen appears immediately instead of the onboarding screen.\\ \\
+When the user clicks the ‘Ms. TROMM’ application icon, the splash page of our application will be shown. If there is no history of logging in to our application on the user's mobile phone, the onboarding page will be displayed. The user can read the description of why the main functions on the onboarding screen. At the end of the onboarding screen, the user can go to the login or membership screen. If the user has a history of logging in to our application from the user's mobile phone, the login screen appears immediately instead of the onboarding screen.\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+
+\break
 
 \subsection{Login}
 \begin{enumerate}
     \item Enter ID(e-mail) and password\\
-        The user must enter their ID(e-mail) and password in the ID and password fields for Login, respectively. \\ \\ \\ \\
-\end{enumerate}
-\centerline{\includegraphics[scale=0.5]{assets/flow_2.png}}
-\begin{enumerate}
+        The user must enter their ID(e-mail) and password in the ID and password fields for Login, respectively. \\ \\
+    \centerline{\includegraphics[scale=0.5]{assets/flow_2.png}}
     \item Login Button\\
         \item[-] If the user’s ID and password are established: Approved\\
         \item[-] If the user’s ID and password are not established: Pop-up screen indicating that login failed\\
@@ -847,8 +967,10 @@ When the user clicks the ‘Ms. TROMM’ application icon, the splash page of ou
     \item Sign-up Button\\
         When clicking the password change button, it goes to the password change screen. The user can change the password after entering the ID information and receiving confirmation that the ID is in the DB.\\ \\
     \item Changing Password Button
-        When the user clicks the membership registration button, it goes to the Sign-up form page. \\ \\
+        When the user clicks the membership registration button, it goes to the Sign-up form page. \\ \\ \\ \\ \\ \\ \\
 \end{enumerate}
+
+\break
 
 \subsection{Sign-up}
 When the user presses the membership registration button, the membership form page is displayed. The membership form page requires five types of information. Users must agree to the terms and conditions of personal information utilization. \\ \\ 
@@ -913,12 +1035,12 @@ All pop-up notifications that have occurred within this application can be found
 \subsection{Recommendation}
 In the recommendation menu, more details of the recommendations that were printed as pop-ups are exposed. This menu is divided into two categories: today's recommendation and control recommendation. When you first enter this menu, a screen indicating the description of each menu is displayed. Based on this screen, the user can know what role each button plays in this recommended menu. In today's recommendation, users can check recommendations using calendars and weather APIs. In particular, when you click on the scent recommendation part, a pop-up asking if you want to apply the scent is exposed. In the case of control recommendations, recommendations related to the clothing and home environment in the styler are exposed. In the case of indoor drying, pop-ups asking if indoor drying will be performed are exposed. \\ \\
 
+\subsection{Styler}
+In this menu, the user can control the interlocked styler. First of all, you can check the interlocking status between the styler and the smart mirror at the top of the menu, and if it is not interlocked, you can proceed with the interlocking. If it is not interlocked, the styler cannot be controlled. Assuming interlocked, the user can control the styler with power on, power off, start operation, stop operation buttons, and reservation buttons. In addition, if the styler is working, it shows which function is working, and you can check the current status of the styler. At the bottom, there are a total of six menu buttons that can be operated by the styler. When the user clicks these buttons, detailed courses that can be executed in each menu are exposed in the form of modals. If the user clicks here, the detailed course is executed. If the user presses another run button during the styler trial, a pop-up will be displayed saying, "The styler is currently operating." If the user wants to do another run, the styler must be stopped first with the top button. \\ \\
+
 \subsection{My Closet}
 My closet is a floating action button displayed in the bottom right corner of this application that can be accessed anywhere. When the user clicks the button, he or she can go to the My Closet. If the styler is working, the user can determine what clothes are in the styler in a bookmark state. The clothes in the styler are bookmarked and displayed at the top of the clothing list. And divide the degree to which the styler is needed into three stages and display it on the clothes list together. Except for the costumes in the styler, the rest of the clothes are arranged in the order in which the styler is required. This makes it easy for users to figure out which clothes need a styler. For example, if the wedding is scheduled in three days, it will be marked "This Closes need Styler!" above the suit clothing item that can be worn for the wedding. And if you click the arrow at the bottom of each clothing item, the user can check the registration date, the last styler working day, and the registration of the clothes.\\
 If the user clicks the "Register New Clothes" button in the upper right corner of the menu, a form page will be displayed to register new clothes. On this form page, users can enter pictures, names, colors, and materials of clothes. Pop-up information will reveal that learning recommended content may become difficult if the category is designated as not selected. And when you finish the new clothes registration process, a guide pop-up will occur to notify you of the completion of the new clothes registration process, and you will know that the user has completed this process.\\ \\
-
-\subsection{Styler}
-In this menu, the user can control the interlocked styler. First of all, you can check the interlocking status between the styler and the smart mirror at the top of the menu, and if it is not interlocked, you can proceed with the interlocking. If it is not interlocked, the styler cannot be controlled. Assuming interlocked, the user can control the styler with power on, power off, start operation, stop operation buttons, and reservation buttons. In addition, if the styler is working, it shows which function is working, and you can check the current status of the styler. At the bottom, there are a total of six menu buttons that can be operated by the styler. When the user clicks these buttons, detailed courses that can be executed in each menu are exposed in the form of modals. If the user clicks here, the detailed course is executed. If the user presses another run button during the styler trial, a pop-up will be displayed saying, "The styler is currently operating." If the user wants to do another run, the styler must be stopped first with the top button. \\ \\
 
 \subsection{All}
 The user can check the general information of Ms. TROMM in the All menu. You can check the application version information at the top of this menu. By clicking on the My Information menu below, you can check the information you created when signing up for this application. You can also modify the information. If the user wants to modify it, click the 'Modify' button at the bottom of the My Information menu. When the user clicks the button, the form page that was displayed at the time of membership registration is displayed. Each field contains values that the user originally entered. By clicking on each field, you can modify the entered content. When the correction is completed, the correction is reflected by pressing the button at the bottom. Changes are saved in the DB. Finally, when you click on the Personal Information Terms menu, you can check the terms and conditions you agreed to when you signed up for this application. \\
