@@ -1,5 +1,3 @@
-</br>
-
 ## 👩🏻‍💼 Ms.TROMM
 
 ### Wise Secretary Always Thinking about You:
@@ -21,8 +19,6 @@
 ##### YU JIN HER, Department of Information System
 
 ##### EO JIN LEE, Department of Information System
-
-</br>
 
 ---
 
@@ -287,16 +283,16 @@ def add_csv(userid):
 
 <br />
 
-## 3. MySQL(DB)
+## 3. MySQL+Heroku(DB)
 
 - 실시간으로 정보를 교환하고 업데이트 및 학습과정을 거치는 Part
 
 - MySQL을 사용하여 원격으로 데이터베이스를 관리
-- 기존에 구축해둔 sqlAlchemy의 ORM models를 통해 파이썬 코드로 SQL을 조작
+- 기존에 구축해둔 SqlAlchemy의 ORM models를 통해 파이썬 코드로 SQL을 조작
 
   `dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
 
-- 일정 트래픽의 MySQL을 무료로 호스팅 할 수 있도록 해주는 서버인 heroku 서비스와 MySQL을 연결하여, 실시간으로 데이터베이스의 데이터를 읽고 업데이트할 수 있도록 활용
+- 일정 트래픽의 MySQL을 무료로 호스팅 할 수 있도록 해주는 서버인 Heroku 서비스와 MySQL을 연결하여, 실시간으로 데이터베이스의 데이터를 읽고 업데이트할 수 있도록 활용
 
 - MySQL을 Heroku 서버의 clearDB에 연결하여, 이를 JetBrain의 Datagrip을 통해 데이터가 제대로 업데이트 되었는지를 실시간으로 확인
 
