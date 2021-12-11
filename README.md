@@ -107,7 +107,7 @@ class weatherSchema(Schema):
     daily = fields.Integer()
 ```
 
-- 프론트앤드와 Restful API 소통을 위해 Swagger 사용
+- 프론트앤드와 Restful API 소통을 위해 Swagger 사용(사진넣기)
 
   `dir > Ms-TROMM/MsTROMM_Backend/flaskr/Swg.py`
 
