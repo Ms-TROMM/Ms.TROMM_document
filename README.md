@@ -72,7 +72,7 @@ def alert(userid):
 
 - 프로젝트 데이터 모델의 유지 관리 및 보수의 용이성을 위해 SqlAlchemy를 통해 ORM(Object-Relationship-Model)을 구현
 
-`dir > Ms-TROMM/MsTROMM_Backend/flaskr/models`
+  `dir > Ms-TROMM/MsTROMM_Backend/flaskr/models`
 
 ```python
 from flask_sqlalchemy import SQLAlchemy
