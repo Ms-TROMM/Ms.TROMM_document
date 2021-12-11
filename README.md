@@ -107,7 +107,7 @@ class weatherSchema(Schema):
     daily = fields.Integer()
 ```
 
-- 프론트앤드와 Restful API 소통을 위해 Swagger 사용(사진넣기)
+- 프론트앤드와 Restful API 소통을 위해 Swagger 사용
 
   `dir > Ms-TROMM/MsTROMM_Backend/flaskr/Swg.py`
 
@@ -121,9 +121,12 @@ specs_dict = Status().specs_dict
 @swag_from(specs_dict)
 ```
 
+<img width="1374" alt="apidocs" src="https://user-images.githubusercontent.com/50936176/145680194-6a1c7047-91b6-420e-94ab-56b6cd072516.png">
+
+</br>
 - 스타일러의 NeedStyler value Update를 위해 학습모델 사용
 
-  `dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
+`dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
 
 ```python
 def need_styler(clothes,userid):
@@ -360,10 +363,19 @@ class Schedule(db.Model):
         return self
 ```
 
-- MySQL을 사용하여 원격으로 데이터베이스를 관리(사진넣기!)
+- MySQL을 사용하여 원격으로 데이터베이스를 관리
 - 일정 트래픽의 MySQL을 무료로 호스팅 할 수 있도록 해주는 서버인 Heroku 서비스와 MySQL을 연결하여, 실시간으로 데이터베이스의 데이터를 읽고 업데이트할 수 있도록 활용
 
-- MySQL을 Heroku 서버의 clearDB에 연결하여, 이를 JetBrain의 Datagrip을 통해 데이터가 제대로 업데이트 되었는지를 실시간으로 확인(사진넣기)
+    <img width="343" alt="heroku" src="https://user-images.githubusercontent.com/50936176/145680199-fa7b7373-b2b6-4265-910b-e66fc0188258.png">
+
+</br>
+
+- MySQL을 Heroku 서버의 clearDB에 연결하여, 이를 JetBrain의 Datagrip을 통해 데이터가 제대로 업데이트 되었는지를 실시간으로 확인
+  </br>
+
+      <img width="853" alt="db" src="https://user-images.githubusercontent.com/50936176/145680197-4dea4f8e-5cf9-404c-be4f-9c7ba2d739cd.png">
+
+</br>
 
 - Heroku를 통해 프론트앤드와 백앤드(데이터베이스) 간의 데이터를 주고받는 원활한 실시간 소통 구현
 
