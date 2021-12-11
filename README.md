@@ -372,8 +372,7 @@ class Schedule(db.Model):
 
 - MySQL을 Heroku 서버의 clearDB에 연결하여, 이를 JetBrain의 Datagrip을 통해 데이터가 제대로 업데이트 되었는지를 실시간으로 확인
   </br>
-
-      <img width="853" alt="db" src="https://user-images.githubusercontent.com/50936176/145680197-4dea4f8e-5cf9-404c-be4f-9c7ba2d739cd.png">
+  <img width="853" alt="db" src="https://user-images.githubusercontent.com/50936176/145680197-4dea4f8e-5cf9-404c-be4f-9c7ba2d739cd.png">
 
 </br>
 
