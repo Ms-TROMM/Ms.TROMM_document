@@ -42,7 +42,7 @@
 
 `dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
 
-- 사용자(frontend)에게 전달받은 정보(json)를 통해 사용자가 원하는 정보를, 원하는 방식으로 볼 수 있도록 frontend에게 다시 전달하는 Part(by Restful API)
+- **사용자(frontend)에게 전달받은 정보(json)를 통해 사용자가 원하는 정보를, 원하는 방식으로 볼 수 있도록 frontend에게 다시 전달하는 Part(by Restful API)**
 - 사용자가 원하는 정보를 DB로부터 가져와서 가공하여 frontend가 사용자에게 원하는 방식으로 전달할 수 있도록 하는 Part(by Restful API)
 
 ```python
@@ -111,13 +111,14 @@ class weatherSchema(Schema):
 
   `dir > Ms-TROMM/MsTROMM_Backend/flaskr/Swg.py`
 
+  `dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
+
 ```python
 swagger = Swagger(app)
 
 # ex
 specs_dict = Status().specs_dict
 @swag_from(specs_dict)
-
 ```
 
 - 스타일러의 NeedStyler value Update를 위해 학습모델 사용
@@ -275,21 +276,97 @@ def add_csv(userid):
     return 'finish update!'
 ```
 
-<br />
+- API(openWeatherMap, GoogleCal)를 활용하여 추천시스템 구축
+
+```python
+# 날씨 api 가져오기
+def getWeather(city):
+    openweather_api_url = "https://api.openweathermap.org/data/2.5/"
+    ### env파일을 통해 api key hide
+    service_key = environ.get('weatherApiKey')
+
+    # API 요청시 필요한 인수값 정의
+    ow_api_url = openweather_api_url + "weather"
+    payload = "?q=" + str(city) + "&" + "appid=" + service_key + "&lang=kr"
+    url_total = ow_api_url + payload
+
+    # API 요청하여 데이터 받기
+    req = urllib.request.urlopen(url_total)
+    res = req.readline()
+    # 받은 값 JSON 형태로 정제하여 반환
+    items = json.loads(res)
+    return items
+```
+
+```python
+## google calendar API
+def calendar():
+    api_url = "https://www.googleapis.com/calendar/v3/calendars/{calID}/events?orderBy=startTime&singleEvents=true&timeMax="
+    # using .env
+    service_key = environ.get('googleapi')
+
+    # API 요청시 필요한 인수값 정의
+    ## 기준시간 앞 뒤 100일간의 데이터 수집
+    time_min = (datetime.date.today() + datetime.timedelta(days=-100)).isoformat() + "T00:00:00Z"
+    time_max = (datetime.date.today() + datetime.timedelta(days=100)).isoformat() + "T23:59:59Z"
+    url_total = api_url + time_max + "&timeMin=" + time_min + "&key=" + service_key
+
+    # API 요청하여 데이터 받아서 json으로 return
+    req = requests.get(url_total)
+    items = req.json()
+    return json.dumps(items, ensure_ascii=False)
+```
+
+  <br />
 
 ## 3. MySQL+Heroku(DB)
 
-- 실시간으로 정보를 교환하고 업데이트 및 학습과정을 거치는 Part
+- **실시간으로 정보를 교환하고 업데이트 및 학습과정을 거치는 Part**
 
-- MySQL을 사용하여 원격으로 데이터베이스를 관리
 - 기존에 구축해둔 SqlAlchemy의 ORM models를 통해 파이썬 코드로 SQL을 조작
 
   `dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
 
+  `dir > Ms-TROMM/MsTROMM_Backend/flaskr/models`
+
+```python
+ # ex. Schedule Model
+from ..main import db
+from marshmallow import Schema, fields
+
+class Schedule(db.Model):
+    ## table 생성 by SqlAlchemy
+    __tablename__ = 'schedule'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    title = db.Column(db.String(100))
+    description = db.Column(db.String(255))
+    cont = db.Column(db.Integer)
+    datetime = db.Column(db.DateTime, nullable=False, server_default=db.func.now())
+
+    # init
+    def __init__(self,id, user_id, title, description, cont):
+        self.id = id
+        self.cont = cont
+        self.description = description
+        self.user_id = user_id
+        self.title = title
+
+    # db add and commit
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+        return self
+```
+
+- MySQL을 사용하여 원격으로 데이터베이스를 관리(사진넣기!)
 - 일정 트래픽의 MySQL을 무료로 호스팅 할 수 있도록 해주는 서버인 Heroku 서비스와 MySQL을 연결하여, 실시간으로 데이터베이스의 데이터를 읽고 업데이트할 수 있도록 활용
 
-- MySQL을 Heroku 서버의 clearDB에 연결하여, 이를 JetBrain의 Datagrip을 통해 데이터가 제대로 업데이트 되었는지를 실시간으로 확인
+- MySQL을 Heroku 서버의 clearDB에 연결하여, 이를 JetBrain의 Datagrip을 통해 데이터가 제대로 업데이트 되었는지를 실시간으로 확인(사진넣기)
 
 - Heroku를 통해 프론트앤드와 백앤드(데이터베이스) 간의 데이터를 주고받는 원활한 실시간 소통 구현
 
   `dir > Ms-TROMM/MsTROMM_Backend/Procfile`
+
+  [Link of Heroku Server](https://ms-tromm.herokuapp.com/)
