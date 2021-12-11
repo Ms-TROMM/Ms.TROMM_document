@@ -124,9 +124,10 @@ specs_dict = Status().specs_dict
 <img width="1374" alt="apidocs" src="https://user-images.githubusercontent.com/50936176/145680194-6a1c7047-91b6-420e-94ab-56b6cd072516.png">
 
 </br>
+
 - 스타일러의 NeedStyler value Update를 위해 학습모델 사용
 
-`dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
+  `dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
 
 ```python
 def need_styler(clothes,userid):
@@ -326,7 +327,7 @@ def calendar():
 
 - **실시간으로 정보를 교환하고 업데이트 및 학습과정을 거치는 Part**
 
-- 기존에 구축해둔 SqlAlchemy의 ORM models를 통해 파이썬 코드로 SQL을 조작
+- 기존에 구축해둔 SqlAlchemy의 ORM models를 통해 파이썬 코드로 SQL Ccontrol
 
   `dir > Ms-TROMM/MsTROMM_Backend/flaskr/main.py`
 
