@@ -4,11 +4,7 @@
 
 ### Artificial Intelligence-based Recommendation Software using Stylers and Smart Mirror
 
-</br>
-
 ---
-
-</br>
 
 ## 🔥 Contributors
 
