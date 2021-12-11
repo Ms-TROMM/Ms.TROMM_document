@@ -24,8 +24,6 @@
 
 ---
 
-</br>
-
 ## 🔋 Methodolgy
 
 > ### **Stacks :** Flutter(frontend),Python flask(backend), MySQL(DB), etc
@@ -111,7 +109,7 @@ class weatherSchema(Schema):
 
 - 프론트앤드와 Restful API 소통을 위해 Swagger 사용
 
-`dir > Ms-TROMM/MsTROMM_Backend/flaskr/Swg.py`
+  `dir > Ms-TROMM/MsTROMM_Backend/flaskr/Swg.py`
 
 ```python
 swagger = Swagger(app)
