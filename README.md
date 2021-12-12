@@ -32,13 +32,13 @@ br## 👩🏻‍💼 Ms.TROMM
 
 ## 1. Flutter(frontend)
 
+`dir > Ms-TROMM/MsTROMM_Frontend/lib/ui`
+
 - 안드로이드와 iOS 환경에서 모두 개발이 가능하고 구글에서 Dart언어를 기반으로 제작한 웹/앱 크로스플랫폼 프레임워크인 Flutter 사용
 - 백앤드 자체 혹은 데이터베이스로부터 가공한 json 타입의 데이터를 백앤드로부터 요청하여 Ms.TROMM 사용자들이 사용하기 쉽도록 보여주는 역할 수행
 - 사용자로부터 받은 정보를 백앤드 서버로 전달하여 데이터베이스에 저장(업데이트)하거나 백앤드 서버가 가공할 수 있도록 데이터를 제공
 
-  `dir > Ms-TROMM/MsTROMM_Frontend/lib/ui`
-
-* Home
+* 홈
 
   - 날씨를 보여주는 위젯
   - 스타일러 작동 상태 표현 위젯
@@ -87,7 +87,7 @@ br## 👩🏻‍💼 Ms.TROMM
   - 회원가입 화면 (lib/ui/authentication/signup.dart)
     - 사용자 이메일, 비밀번호, 성별, 출생년도 입력 후 회원가입 가능
     - 회원가입 시 설문을 통해 사용자의 선호 등록 가능 (lib/ui/survey)
-      - 설문 내용은 사용자의 선호 색상, 선호 향, 선호 의류 유형으로 구성됨
+    - 설문 내용은 사용자의 선호 색상, 선호 향, 선호 의류 유형으로 구성됨
 
 </br>
 
@@ -117,6 +117,8 @@ class _HomePageState extends State<HomePage> {
     }
 
 ```
+
+</br>
 
 `API service`
 
