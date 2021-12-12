@@ -382,3 +382,7 @@ class Schedule(db.Model):
   `dir > Ms-TROMM/MsTROMM_Backend/Procfile`
 
   [Link of Heroku Server](https://ms-tromm.herokuapp.com/)
+  
+- dbdiagram.io 사이트를 활용하여 SQL과 유사한 코드(테이블, 인덱스 등)를 삽입하면 자동으로 ERD를 생성
+
+
