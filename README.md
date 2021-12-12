@@ -36,6 +36,109 @@
 - 백앤드 자체 혹은 데이터베이스로부터 가공한 json 타입의 데이터를 백앤드로부터 요청하여 Ms.TROMM 사용자들이 사용하기 쉽도록 보여주는 역할 수행
 - 사용자로부터 받은 정보를 백앤드 서버로 전달하여 데이터베이스에 저장(업데이트)하거나 백앤드 서버가 가공할 수 있도록 데이터를 제공
 
+### 화면
+
+* Home (lib/ui/home)
+  * 날씨를 보여주는 위젯 
+  * 스타일러 작동 상태 표현 위젯 
+  * 실내 제습, 자동건조 기능 컨트롤러 위젯 
+  * Bottom tab 을 통해 추천, 스타일러, 설정 탭으로 이동 가능 
+  * Firebase Cloud Messaging 을 통해서 받아온 notification 처리 로직 포함 
+
+* 추천 (lib/ui/recommendation)
+  * 오늘의 추천과 제어 추천 탭 
+  * 내 옷장으로 이동 가능한 버튼 존재 
+
+* 내 옷장 (lib/ui/recommendation/my_closet.dart)
+  * 내 옷장에 등록된 옷들을 서버에서 읽어온 후 디스플레이 함 
+  * 우측 상단의 카메라 버튼을 클릭해 내 옷을 등록할 수 있음 
+  
+* 스타일러 (lib/ui/styler)
+  * 스타일러를 간단히 제어할 수 있는 UI 제공 
+  * 스타일링 코스를 선택할 수 있는 UI 제공 
+  * 스타일러 및 스마트 미러의 연결 상태에 대한 현황판 제공 
+
+* 설정 (lib/ui/settings)
+  * 사용자 정보 변경 가능 
+  * 푸시알림 설정 
+  * 약관 및 버전 정보 
+  * 로그아웃 기능 
+
+* 기타 
+  * 투토리얼 화면 (lib/ui/authentication/tutorial.dart)
+    * 앱 사용 방식에 대한 간단한 투토리얼 페이지 제공
+  * 로그인 화면 (lib/ui/authentication/login.dart)
+    * 사용자 이메일, 비밀번호 입력 후 로그인 가능 
+  * 회원가입 화면 (lib/ui/authentication/signup.dart) 
+    * 사용자 이메일, 비밀번호, 성별, 출생년도 입력 후 회원가입 가능 
+    * 회원가입 시 설문을 통해 사용자의 선호 등록 가능 (lib/ui/survey)
+      * 설문 내용은 사용자의 선호 색상, 선호 향, 선호 의류 유형으로 구성됨 
+
+### 주요 로직 
+
+#### Firebase Cloud Messaging 처리 
+
+```dart 
+
+class _HomePageState extends State<HomePage> {
+  late FirebaseMessaging messaging;
+    ... 
+
+  @override
+  void initState() {
+    super.initState();
+
+    messaging = FirebaseMessaging.instance;
+    messaging.getToken().then((value) {
+      print(value);
+    });
+
+    FirebaseMessaging.onMessage.listen((RemoteMessage event) {
+      print("message recieved");
+      print(event.notification!.body);
+      if (event.notification!.title == 'feedback') {
+     
+     ...
+    }
+
+```
+
+#### API service
+
+```dart 
+ApiService apiService = ApiService();
+
+class ApiService {
+  static const url = "https://ms-tromm.herokuapp.com/";
+
+// endpoint 
+  static const getAllUserClothes = "users/clothes/";
+
+  Future<List<UserClothes>> fetchUserClothes(int userId) async {
+    final response =
+        await http.get(Uri.parse(url + getAllUserClothes + userId.toString()));
+    List<UserClothes> listOfUserClothes = [];
+
+    if (response.statusCode == 200) {
+      List<dynamic> list = <dynamic>[];
+      list = json.decode(response.body);
+      print(list);
+      if (list.isNotEmpty) {
+        for (int i = 0; i < list.length; i++) {
+          if (list[i] != null) {
+            Map<String, dynamic> map = list[i];
+            listOfUserClothes.add(UserClothes.fromJson(map));
+          }
+        }
+      }
+      return Future.value(listOfUserClothes);
+    } else {
+      throw Exception("API call failed");
+    }
+  }
+
+```
+
 <br />
 
 ## 2. Flask(backend)
